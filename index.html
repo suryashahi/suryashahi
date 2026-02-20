@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Surprise Me</title>
+    <title>Surprise Game</title>
     <style>
         * {
             margin: 0;
@@ -19,6 +19,7 @@
             background-size: 400% 400%;
             animation: gradientMove 8s ease infinite;
             overflow: hidden;
+            flex-direction: column;
         }
 
         @keyframes gradientMove {
@@ -34,13 +35,37 @@
             border-radius: 50px;
             cursor: pointer;
             background: white;
-            color: black;
             transition: 0.3s;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         button:hover {
             transform: scale(1.1);
+        }
+
+        #giftSection {
+            display: none;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .gifts {
+            display: flex;
+            gap: 40px;
+        }
+
+        .gift {
+            font-size: 80px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .gift:hover {
+            transform: scale(1.2);
         }
 
         video {
@@ -57,17 +82,34 @@
 </head>
 <body>
 
-    <button onclick="playVideo()">🎉 Surprise Me</button>
+    <button id="startBtn">🎉 Surprise Me</button>
 
-    <video id="surpriseVideo">
-        <source src="harkaa.mp4" type="video/mp4">
-    </video>
+    <div id="giftSection">
+        <h1>🎁 Choose One</h1>
+        <div class="gifts">
+            <div class="gift" onclick="playVideo('harkaa.mp4')">🎁</div>
+            <div class="gift" onclick="playVideo('hark.mp4')">🎁</div>
+            <div class="gift" onclick="playVideo('harkkk.mp4')">🎁</div>
+        </div>
+    </div>
+
+    <video id="videoPlayer" controls></video>
 
     <script>
-        function playVideo() {
-            const video = document.getElementById("surpriseVideo");
-            video.style.display = "block";
-            video.play();
+        const startBtn = document.getElementById("startBtn");
+        const giftSection = document.getElementById("giftSection");
+        const videoPlayer = document.getElementById("videoPlayer");
+
+        startBtn.onclick = function() {
+            startBtn.style.display = "none";
+            giftSection.style.display = "block";
+        };
+
+        function playVideo(videoFile) {
+            giftSection.style.display = "none";
+            videoPlayer.src = videoFile;
+            videoPlayer.style.display = "block";
+            videoPlayer.play();
         }
     </script>
 
