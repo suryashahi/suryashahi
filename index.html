@@ -1,1 +1,75 @@
-<h1> welcome to here </h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Surprise Me</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #ff0066, #ffcc00, #00ffcc, #6600ff);
+            background-size: 400% 400%;
+            animation: gradientMove 8s ease infinite;
+            overflow: hidden;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        button {
+            padding: 20px 50px;
+            font-size: 24px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: white;
+            color: black;
+            transition: 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="playVideo()">🎉 Surprise Me</button>
+
+    <video id="surpriseVideo">
+        <source src="harkaa.mp4" type="video/mp4">
+    </video>
+
+    <script>
+        function playVideo() {
+            const video = document.getElementById("surpriseVideo");
+            video.style.display = "block";
+            video.play();
+        }
+    </script>
+
+</body>
+</html>
