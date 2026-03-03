@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surya | Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- Particles Background -->
+    <canvas id="particlesCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                Surya
+            </a>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <button class="appearance-toggle" id="appearanceToggle" title="Toggle Appearance">
+                <i class="fas fa-palette"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-greeting animate-slide-up">
+                    <span class="greeting-line"></span>
+                    <h3>SURYA BAHADUR SHAHI</h3>
+                </div>
+                <h1 class="hero-title animate-slide-up delay-1">
+                    Full Stack <span class="gradient-text">Developer</span>
+                </h1>
+                <p class="hero-description animate-slide-up delay-2">
+                    Hi! I'm Surya, a junior developer with a strong interest in Artificial Intelligence and Machine
+                    Learning. I enjoy building practical applications, exploring intelligent systems, and continuously
+                    improving my technical skills through hands-on projects and real-world problem solving
+                </p>
+                <div class="hero-buttons animate-slide-up delay-3">
+                    <a href="surya shahi resume.pdf" download class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        Contact Me <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="hero-stats animate-slide-up delay-4">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="10">0</span>+
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="2">0</span>+
+                        <span class="stat-label">Years Exp</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="5">0</span>+
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image animate-fade-in delay-2">
+                <div class="image-wrapper">
+                    <div class="image-border"></div>
+                    <img src="photo2.jpeg" alt="Surya Bahadur Shahi" />
+                </div>
+                <div class="floating-card card-1">
+                    <i class="fab fa-react"></i> React
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fab fa-node-js"></i> Node.js
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fab fa-python"></i> Python
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="section about-preview" id="about-preview">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-content reveal-left">
+                    <h2 class="section-title">
+                        About <span class="gradient-text">Me</span>
+                    </h2>
+                    <p class="section-subtitle">A brief introduction about me and my interests.</p>
+                    <p class="section-text">
+                        I am a passionate junior developer with a strong interest in Artificial Intelligence and Machine
+                        Learning. I enjoy building intelligent, scalable applications by combining problem-solving
+                        skills with both front-end and back-end development experience.
+                    </p>
+                    <a href="about.html" class="btn btn-primary">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="section-image reveal-right">
+                    <div class="about-image-card">
+                        <div class="code-window">
+                            <div class="window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <pre class="code-block"><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">"Surya"</span>,
+  <span class="code-property">role</span>: <span class="code-string">"Full Stack Dev"</span>,
+  <span class="code-property">skills</span>: [
+    <span class="code-string">"React"</span>,
+    <span class="code-string">"Node.js"</span>,
+    <span class="code-string">"Python"</span>,
+    <span class="code-string">"AI/ML"</span>
+  ],
+  <span class="code-property">passion</span>: <span class="code-string">"Building cool stuff"</span>
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Preview Section -->
+    <section class="section projects-preview" id="projects-preview">
+        <div class="container">
+            <div class="section-grid reverse">
+                <div class="section-content reveal-right">
+                    <h2 class="section-title">
+                        My <span class="gradient-text">Projects</span>
+                    </h2>
+                    <p class="section-subtitle">Some of my projects that I have built and am currently working on.</p>
+                    <p class="section-text">
+                        From web applications to AI-powered tools, each project represents my dedication
+                        to writing clean, efficient code and creating meaningful digital experiences.
+                    </p>
+                    <a href="projects.html" class="btn btn-primary">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="section-image reveal-left">
+                    <div class="projects-grid-preview">
+                        <div class="preview-card">
+                            <div class="preview-card-icon"><i class="fas fa-globe"></i></div>
+                            <h4>Web Apps</h4>
+                        </div>
+                        <div class="preview-card">
+                            <div class="preview-card-icon"><i class="fas fa-robot"></i></div>
+                            <h4>AI Projects</h4>
+                        </div>
+                        <div class="preview-card">
+                            <div class="preview-card-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <h4>Mobile Apps</h4>
+                        </div>
+                        <div class="preview-card">
+                            <div class="preview-card-icon"><i class="fas fa-database"></i></div>
+                            <h4>Backend APIs</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="contact-content reveal-up">
+                <div class="contact-header">
+                    <h2 class="contact-title">Let's <span class="talk-badge">Talk</span></h2>
+                    <p class="contact-description">
+                        Feel free to reach out if you have any questions, want to collaborate,
+                        or just want to say hi. I'd love to hear from you!
+                    </p>
+                </div>
+
+                <form class="contact-form" id="contactForm" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="firstName" name="firstName" placeholder="Your first Name" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="lastName" name="lastName" placeholder="Your last Name" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="E-mail" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Phone Number" />
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <textarea id="message" name="message" rows="5" placeholder="Write Your Message"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">
+                        Send Now
+                    </button>
+                </form>
+
+                <div class="social-links">
+                    <a href="mailto:suryashahi153@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/suryashahi" class="social-link" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/surya__shahi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        class="social-link" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/surya-bahadur-shahi-61674a259/" class="social-link"
+                        target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Surya. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-bubble" id="chatbotBubble">
+            <span class="chatbot-badge">1</span>
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        <div class="chatbot-tooltip" id="chatbotTooltip">
+            Hello! I am Surya's Bot, Are you looking for some help?
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar"><i class="fas fa-robot"></i></div>
+                    <div>
+                        <h4>Surya's Bot</h4>
+                        <span class="chatbot-status"><span class="status-dot"></span> Online</span>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbotClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chat-message bot">
+                    <div class="message-bubble">Hello! 👋 I'm Surya's assistant. How can I help you today?</div>
+                </div>
+                <div class="chat-message bot">
+                    <div class="message-bubble">You can ask me about Surya's skills, projects, or how to get in touch!
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatInput" placeholder="Type a message..." />
+                <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/particles.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>
