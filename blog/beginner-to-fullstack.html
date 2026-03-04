@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Journey: From Beginner to Full Stack | Surya</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+        .blog-article {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 120px 40px 80px;
+            position: relative;
+            z-index: 1;
+        }
+        .blog-article-header { margin-bottom: 48px; }
+        .blog-article-category {
+            display: inline-block;
+            padding: 5px 16px;
+            border-radius: 20px;
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+        .blog-article-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #f59e0b, #ec4899, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .blog-article-meta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        .blog-article-meta span { display: flex; align-items: center; gap: 6px; }
+        .blog-article-author { display: flex; align-items: center; gap: 12px; }
+        .blog-article-author-avatar {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: linear-gradient(135deg, #f59e0b, #ec4899);
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 1rem;
+        }
+        .blog-article-author-name { font-weight: 600; color: var(--text-primary); }
+        .blog-article-cover {
+            width: 100%; height: 400px; border-radius: 20px;
+            background: linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 48px; overflow: hidden;
+        }
+        .blog-article-cover i { font-size: 6rem; color: rgba(255, 255, 255, 0.2); }
+        .blog-article-body { font-size: 1.08rem; line-height: 1.9; color: var(--text-secondary); }
+        .blog-article-body h2 { font-size: 1.6rem; font-weight: 700; color: var(--text-primary); margin: 40px 0 16px; }
+        .blog-article-body h3 { font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin: 32px 0 12px; }
+        .blog-article-body p { margin-bottom: 20px; }
+        .blog-article-body strong { color: var(--text-primary); }
+        .blog-article-body code {
+            background: var(--bg-card); padding: 3px 8px; border-radius: 6px;
+            font-family: var(--font-code); font-size: 0.92rem;
+            color: var(--accent-tertiary); border: 1px solid var(--border-color);
+        }
+        .blog-article-body ul, .blog-article-body ol { margin: 16px 0 20px 24px; }
+        .blog-article-body li { margin-bottom: 8px; }
+        .blog-article-body blockquote {
+            border-left: 3px solid #f59e0b; padding: 16px 24px;
+            margin: 24px 0; background: rgba(245, 158, 11, 0.06);
+            border-radius: 0 12px 12px 0; font-style: italic;
+        }
+        .timeline-section {
+            position: relative;
+            padding-left: 32px;
+            margin: 32px 0;
+            border-left: 2px solid var(--border-color);
+        }
+        .timeline-section .tl-item {
+            position: relative;
+            margin-bottom: 28px;
+        }
+        .timeline-section .tl-item::before {
+            content: '';
+            position: absolute;
+            left: -39px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            border: 2px solid var(--bg-primary);
+        }
+        .timeline-section .tl-item h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin: 0 0 4px;
+        }
+        .timeline-section .tl-item .tl-date {
+            font-size: 0.8rem;
+            color: var(--accent-secondary);
+            margin-bottom: 8px;
+        }
+        .blog-article-tags {
+            display: flex; flex-wrap: wrap; gap: 8px;
+            margin-top: 48px; padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+        }
+        .blog-article-tags span {
+            padding: 5px 14px; border-radius: 20px;
+            background: rgba(245, 158, 11, 0.1); color: #fbbf24;
+            font-size: 0.78rem; font-weight: 500;
+            border: 1px solid rgba(245, 158, 11, 0.15);
+        }
+        .blog-back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--accent-secondary); font-size: 0.9rem;
+            font-weight: 500; margin-bottom: 32px; transition: all 0.3s ease;
+        }
+        .blog-back-link:hover { gap: 12px; color: var(--accent-tertiary); }
+        @media (max-width: 768px) {
+            .blog-article { padding: 100px 20px 60px; }
+            .blog-article-title { font-size: 1.8rem; }
+            .blog-article-cover { height: 240px; }
+            .blog-article-body { font-size: 1rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Surya</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="../index.html#home" class="nav-link">Home</a>
+                <a href="../index.html#about-preview" class="nav-link">About</a>
+                <a href="../index.html#projects-preview" class="nav-link">Projects</a>
+                <a href="../index.html#testimonials" class="nav-link">Testimonials</a>
+                <a href="../index.html#blog" class="nav-link active">Blog</a>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <article class="blog-article">
+        <a href="../index.html#blog" class="blog-back-link"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+
+        <div class="blog-article-header">
+            <div class="blog-article-category">Career</div>
+            <h1 class="blog-article-title">My Journey: From Beginner to Full Stack</h1>
+            <div class="blog-article-meta">
+                <div class="blog-article-author">
+                    <div class="blog-article-author-avatar"><i class="fas fa-user"></i></div>
+                    <div>
+                        <div class="blog-article-author-name">Surya Shahi</div>
+                    </div>
+                </div>
+                <span><i class="far fa-calendar"></i> Dec 10, 2025</span>
+                <span><i class="far fa-clock"></i> 6 min read</span>
+                <span><i class="far fa-eye"></i> 2.4k views</span>
+            </div>
+        </div>
+
+        <div class="blog-article-cover">
+            <i class="fas fa-rocket"></i>
+        </div>
+
+        <div class="blog-article-body">
+            <p>Every developer has an origin story. Some start young, some start late. Some follow a straight path, others zigzag through trial and error. Here's mine — from writing my very first <code>&lt;h1&gt;Hello World&lt;/h1&gt;</code> to building full-stack AI-powered applications.</p>
+
+            <blockquote>The best time to start learning to code was yesterday. The second best time is now.</blockquote>
+
+            <h2>The Timeline</h2>
+
+            <div class="timeline-section">
+                <div class="tl-item">
+                    <h3>The Spark — First Line of Code</h3>
+                    <div class="tl-date">2021</div>
+                    <p>It started with curiosity. I opened Notepad, typed some HTML, and saw a heading appear in my browser. That tiny moment — seeing something I wrote come alive on screen — was magical. I was hooked.</p>
+                </div>
+                <div class="tl-item">
+                    <h3>Learning the Fundamentals</h3>
+                    <div class="tl-date">2021 – 2022</div>
+                    <p>I dove into HTML, CSS, and JavaScript through free resources — freeCodeCamp, YouTube tutorials, and MDN docs. I built terrible websites. And they were beautiful to me because they were <em>mine</em>.</p>
+                </div>
+                <div class="tl-item">
+                    <h3>First Real Project — College Event Website</h3>
+                    <div class="tl-date">2022</div>
+                    <p>I volunteered to build the website for our college tech fest. It was messy, the CSS was spaghetti, and the JS probably had more bugs than features. But people used it. That feedback loop changed everything.</p>
+                </div>
+                <div class="tl-item">
+                    <h3>Discovering Backend & Databases</h3>
+                    <div class="tl-date">2023</div>
+                    <p>Frontend felt limiting. I wanted to build things that <em>stored data</em> and <em>had logic</em>. I learned Node.js, Express, and MongoDB. Suddenly I could build complete applications — login systems, dashboards, APIs.</p>
+                </div>
+                <div class="tl-item">
+                    <h3>Internships — Real World Code</h3>
+                    <div class="tl-date">2024 – 2025</div>
+                    <p>Interning at Amypo (Web Dev) and Nexoris (AI/ML) taught me what textbooks can't — code reviews, Git workflows, team collaboration, and writing code someone else has to maintain.</p>
+                </div>
+                <div class="tl-item">
+                    <h3>The AI Chapter</h3>
+                    <div class="tl-date">2025 – Present</div>
+                    <p>I fell in love with AI. Python, TensorFlow, LangChain, OpenAI — building intelligent applications felt like a superpower. My final year project combined full-stack and AI, and it was the most rewarding thing I've ever built.</p>
+                </div>
+            </div>
+
+            <h2>Lessons I Wish I Knew Earlier</h2>
+
+            <h3>1. Don't Chase Frameworks — Understand Fundamentals</h3>
+            <p>I spent months jumping between React, Vue, and Angular before realizing I barely understood JavaScript. Once I invested time in vanilla JS, closures, prototypes, and async patterns — everything clicked. Frameworks became tools, not mysteries.</p>
+
+            <h3>2. Build Stuff. Break Stuff. Repeat.</h3>
+            <p>Every tutorial I followed made me feel smart. Every project I built from scratch made me feel dumb — at first. But that struggle is where real learning happens. The projects you struggle with teach you 10x more than the ones that go smoothly.</p>
+
+            <h3>3. Read Other People's Code</h3>
+            <p>Open-source repos on GitHub taught me more about clean code architecture than any course. I'd pick a library I used, clone it, and try to understand how it worked. It was humbling and enlightening.</p>
+
+            <h3>4. Your Portfolio Is Your Resume</h3>
+            <p>The best way to stand out isn't a fancy degree or certificate collection — it's a portfolio of real projects that show what you can build. This very portfolio website has opened more doors for me than any resume ever did.</p>
+
+            <h3>5. Community Matters</h3>
+            <p>Joining dev communities on Twitter, Discord, and local meetups connected me with people who inspired me, challenged me, and helped me when I was stuck. Nobody succeeds alone.</p>
+
+            <h2>What's Next?</h2>
+            <p>I'm focused on deepening my AI/ML expertise while building production-grade full-stack applications. My goal is to create technology that solves real problems — whether that's healthcare, education, or accessibility.</p>
+
+            <p>If you're just starting out — keep going. The path isn't linear, and imposter syndrome never fully goes away. But every line of code you write makes you better. And one day, you'll look back at your journey and realize just how far you've come.</p>
+
+            <blockquote>The code you wrote yesterday that you're embarrassed about today? That's called growth.</blockquote>
+
+            <div class="blog-article-tags">
+                <span>Career</span>
+                <span>Growth</span>
+                <span>Story</span>
+                <span>Beginner</span>
+                <span>Full Stack</span>
+                <span>Inspiration</span>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <p>&copy; 2026 Surya Shahi. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

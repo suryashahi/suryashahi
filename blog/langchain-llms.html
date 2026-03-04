@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Started with LangChain and LLMs | Surya</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+        .blog-article {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 120px 40px 80px;
+            position: relative;
+            z-index: 1;
+        }
+        .blog-article-header {
+            margin-bottom: 48px;
+        }
+        .blog-article-category {
+            display: inline-block;
+            padding: 5px 16px;
+            border-radius: 20px;
+            background: rgba(139, 92, 246, 0.15);
+            color: var(--accent-secondary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+        .blog-article-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .blog-article-meta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        .blog-article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .blog-article-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .blog-article-author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .blog-article-author-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .blog-article-cover {
+            width: 100%;
+            height: 400px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #6d28d9 0%, #a855f7 50%, #06b6d4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-article-cover i {
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.2);
+        }
+        .blog-article-body {
+            font-size: 1.08rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+        }
+        .blog-article-body h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 40px 0 16px;
+        }
+        .blog-article-body h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 32px 0 12px;
+        }
+        .blog-article-body p {
+            margin-bottom: 20px;
+        }
+        .blog-article-body code {
+            background: var(--bg-card);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-family: var(--font-code);
+            font-size: 0.92rem;
+            color: var(--accent-tertiary);
+            border: 1px solid var(--border-color);
+        }
+        .blog-article-body pre {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+            overflow-x: auto;
+            font-family: var(--font-code);
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: var(--accent-tertiary);
+        }
+        .blog-article-body ul, .blog-article-body ol {
+            margin: 16px 0 20px 24px;
+        }
+        .blog-article-body li {
+            margin-bottom: 8px;
+        }
+        .blog-article-body blockquote {
+            border-left: 3px solid var(--accent-primary);
+            padding: 16px 24px;
+            margin: 24px 0;
+            background: rgba(139, 92, 246, 0.06);
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        .blog-article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+        }
+        .blog-article-tags span {
+            padding: 5px 14px;
+            border-radius: 20px;
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--accent-tertiary);
+            font-size: 0.78rem;
+            font-weight: 500;
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+        .blog-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 32px;
+            transition: all 0.3s ease;
+        }
+        .blog-back-link:hover {
+            gap: 12px;
+            color: var(--accent-tertiary);
+        }
+        @media (max-width: 768px) {
+            .blog-article { padding: 100px 20px 60px; }
+            .blog-article-title { font-size: 1.8rem; }
+            .blog-article-cover { height: 240px; }
+            .blog-article-body { font-size: 1rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Surya</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="../index.html#home" class="nav-link">Home</a>
+                <a href="../index.html#about-preview" class="nav-link">About</a>
+                <a href="../index.html#projects-preview" class="nav-link">Projects</a>
+                <a href="../index.html#testimonials" class="nav-link">Testimonials</a>
+                <a href="../index.html#blog" class="nav-link active">Blog</a>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <article class="blog-article">
+        <a href="../index.html#blog" class="blog-back-link"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+
+        <div class="blog-article-header">
+            <div class="blog-article-category">AI / ML</div>
+            <h1 class="blog-article-title">Getting Started with LangChain and LLMs</h1>
+            <div class="blog-article-meta">
+                <div class="blog-article-author">
+                    <div class="blog-article-author-avatar"><i class="fas fa-user"></i></div>
+                    <div>
+                        <div class="blog-article-author-name">Surya Shahi</div>
+                    </div>
+                </div>
+                <span><i class="far fa-calendar"></i> Feb 15, 2026</span>
+                <span><i class="far fa-clock"></i> 5 min read</span>
+                <span><i class="far fa-eye"></i> 1.2k views</span>
+            </div>
+        </div>
+
+        <div class="blog-article-cover">
+            <i class="fas fa-brain"></i>
+        </div>
+
+        <div class="blog-article-body">
+            <p>Large Language Models (LLMs) have fundamentally changed the way we build applications. From chatbots to knowledge retrieval systems, from code generators to creative writing assistants — LLMs are everywhere. But building production-ready applications with them requires more than just calling an API. That's where <strong>LangChain</strong> comes in.</p>
+
+            <h2>What is LangChain?</h2>
+            <p>LangChain is an open-source framework designed to simplify the development of applications powered by LLMs. It provides modular components for:</p>
+            <ul>
+                <li><strong>Prompt management</strong> — Templates, output parsers, and dynamic prompts</li>
+                <li><strong>Chains</strong> — Composable sequences of LLM calls and transformations</li>
+                <li><strong>Agents</strong> — Autonomous decision-makers that choose tools and actions</li>
+                <li><strong>Memory</strong> — Persistent context across conversations</li>
+                <li><strong>Retrieval</strong> — Integrations with vector databases and document loaders</li>
+            </ul>
+
+            <h2>Setting Up Your Environment</h2>
+            <p>First, install the required packages:</p>
+            <pre>pip install langchain openai chromadb tiktoken</pre>
+            <p>Create a <code>.env</code> file with your OpenAI API key:</p>
+            <pre>OPENAI_API_KEY=sk-your-api-key-here</pre>
+
+            <h2>Your First Chain</h2>
+            <p>Let's build a simple chain that takes a topic and generates a blog outline:</p>
+            <pre>from langchain.chat_models import ChatOpenAI
+from langchain.prompts import ChatPromptTemplate
+from langchain.chains import LLMChain
+
+llm = ChatOpenAI(model="gpt-4", temperature=0.7)
+
+prompt = ChatPromptTemplate.from_template(
+    "Create a detailed blog outline for the topic: {topic}"
+)
+
+chain = LLMChain(llm=llm, prompt=prompt)
+result = chain.run(topic="Building AI apps with LangChain")
+print(result)</pre>
+
+            <h2>Adding RAG (Retrieval-Augmented Generation)</h2>
+            <p>The real power unlocks when you combine LLMs with your own data. This is called RAG — Retrieval-Augmented Generation.</p>
+            <blockquote>RAG allows your LLM to answer questions grounded in specific documents, reducing hallucinations and increasing accuracy.</blockquote>
+            <p>Here's a simplified workflow:</p>
+            <ol>
+                <li>Load your documents (PDFs, web pages, text files)</li>
+                <li>Split them into chunks using a text splitter</li>
+                <li>Create embeddings and store them in a vector database (Pinecone, ChromaDB)</li>
+                <li>At query time, retrieve relevant chunks and pass them to the LLM</li>
+            </ol>
+
+            <h3>Example with ChromaDB</h3>
+            <pre>from langchain.document_loaders import TextLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.vectorstores import Chroma
+
+# Load and split
+loader = TextLoader("my_notes.txt")
+docs = loader.load()
+splitter = RecursiveCharacterTextSplitter(chunk_size=500)
+chunks = splitter.split_documents(docs)
+
+# Create vector store
+embeddings = OpenAIEmbeddings()
+vectorstore = Chroma.from_documents(chunks, embeddings)
+
+# Query
+results = vectorstore.similarity_search("What is LangChain?")
+print(results[0].page_content)</pre>
+
+            <h2>Building an Agent</h2>
+            <p>Agents are LLMs that can decide which tools to use, when to use them, and how to combine their outputs. They're like giving your AI a toolkit.</p>
+            <pre>from langchain.agents import initialize_agent, Tool
+from langchain.tools import DuckDuckGoSearchRun
+
+search = DuckDuckGoSearchRun()
+tools = [
+    Tool(name="Search", func=search.run,
+         description="Search the web for current information")
+]
+
+agent = initialize_agent(
+    tools, llm, agent="zero-shot-react-description", verbose=True
+)
+agent.run("What are the latest trends in AI for 2026?")</pre>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li>LangChain abstracts the complexity of LLM app development</li>
+                <li>Start with simple chains, then graduate to RAG and agents</li>
+                <li>Vector databases are essential for grounding LLMs in your data</li>
+                <li>Always test with real data — prompt engineering is iterative</li>
+                <li>Consider rate limits, costs, and latency in production</li>
+            </ul>
+
+            <p>The LLM ecosystem is evolving rapidly. LangChain stays up to date with the latest models and integrations, making it an excellent choice for building your next AI-powered project. Happy building!</p>
+
+            <div class="blog-article-tags">
+                <span>Python</span>
+                <span>LangChain</span>
+                <span>OpenAI</span>
+                <span>LLMs</span>
+                <span>RAG</span>
+                <span>Vector DB</span>
+                <span>AI</span>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <p>&copy; 2026 Surya Shahi. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

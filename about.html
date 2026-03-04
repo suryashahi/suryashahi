@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Surya</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- Particles Background -->
+    <canvas id="particlesCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                Surya
+            </a>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <button class="appearance-toggle" id="appearanceToggle" title="Toggle Appearance">
+                <i class="fas fa-palette"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- About Hero - Full Screen -->
+    <section class="about-hero" id="about-hero">
+        <div class="about-hero-container">
+            <div class="about-hero-content animate-slide-up">
+                <div class="hero-greeting">
+                    <span class="greeting-line"></span>
+                    <h3>ABOUT ME</h3>
+                </div>
+                <h1 class="about-hero-title animate-slide-up delay-1">
+                    Know <span class="gradient-text">Who I Am</span>
+                </h1>
+                <p class="about-hero-desc animate-slide-up delay-2">
+                    A passionate full stack developer who loves building beautiful,
+                    scalable applications and exploring the world of AI.
+                </p>
+                <div class="about-hero-buttons animate-slide-up delay-3">
+                    <a href="surya shahi resume.pdf" download class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                    <a href="index.html#contact" class="btn btn-outline">
+                        Get in Touch <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="about-hero-image animate-fade-in delay-2">
+                <div class="image-wrapper">
+                    <div class="image-border"></div>
+                    <img src="photo1.jpeg" alt="Surya Bahadur Shahi" />
+                </div>
+                <div class="floating-card card-1">
+                    <i class="fas fa-laptop-code"></i> Full Stack
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-brain"></i> AI / ML
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-palette"></i> UI/UX
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Details -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title center reveal-up">
+                Who <span class="gradient-text">Am I?</span>
+            </h2>
+            <p class="section-subtitle center reveal-up">
+                Get to know more about my background and what drives me.
+            </p>
+            <div class="about-grid" style="margin-top: 50px;">
+                <div class="about-image-section reveal-left">
+                    <div class="photo-collage">
+                        <div class="collage-photo collage-photo-1">
+                            <img src="photo3.jpeg" alt="Surya - Outdoor" />
+                        </div>
+                        <div class="collage-photo collage-photo-2">
+                            <img src="photo4.jpeg" alt="Surya - Gym" />
+                        </div>
+                        <div class="collage-photo collage-photo-3">
+                            <img src="photo5.jpeg" alt="Surya - Nature" />
+                        </div>
+                    </div>
+                </div>
+                <div class="about-details reveal-right">
+                    <h3>My Story</h3>
+                    <p>
+                        I am passionate about technology and the power of Artificial Intelligence and Machine Learning
+                        to transform ideas into real-world solutions. My journey began with curiosity about how software
+                        works and gradually evolved into a deep interest in building intelligent systems and scalable
+                        applications. As a Computer Science and Engineering student specializing in AI and ML, I
+                        continuously challenge myself through hands-on projects, internships, and self-driven learning
+                        to strengthen both my technical and problem-solving skills. From developing machine learning
+                        models to working on full-stack applications, I focus on turning concepts into practical
+                        implementations. My goal is to grow into a highly skilled AI engineer who builds impactful,
+                        efficient, and future-ready technology.
+                    </p>
+                    <p>
+                        With experience across modern web technologies and a growing focus on
+                        AI/ML, I enjoy tackling complex challenges and turning ideas into reality.
+                        I believe in writing clean, maintainable code and continuously learning
+                        new technologies to stay at the forefront of development.
+                    </p>
+
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="label">Name</div>
+                            <div class="value">Surya Bahadur Shahi</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">Email</div>
+                            <div class="value">suryashahi153@gmail.com</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">Location</div>
+                            <div class="value">Nepal</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="label">Availability</div>
+                            <div class="value">Open to Work</div>
+                        </div>
+                    </div>
+
+                    <a href="surya shahi resume.pdf" download class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title center reveal-up">
+                My <span class="gradient-text">Skills</span>
+            </h2>
+            <p class="section-subtitle center reveal-up">
+                Technologies and tools I work with on a daily basis.
+            </p>
+
+            <div class="skills-grid">
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-title">
+                        <i class="fas fa-code"></i> Frontend
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-title">
+                        <i class="fas fa-server"></i> Backend
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">GraphQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-title">
+                        <i class="fas fa-database"></i> Database
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">Firebase</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-title">
+                        <i class="fas fa-tools"></i> Tools & Others
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">VS Code</span>
+                    </div>
+                </div>
+
+                <div class="skill-category reveal-up">
+                    <div class="skill-category-title">
+                        <i class="fas fa-brain"></i> AI / ML
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">LangChain</span>
+                        <span class="skill-tag">OpenAI API</span>
+                        <span class="skill-tag">Hugging Face</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="section-title center reveal-up">
+                My <span class="gradient-text">Experience</span>
+            </h2>
+            <p class="section-subtitle center reveal-up">
+                A timeline of my professional journey and education.
+            </p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Nov 2025 - Dec 2025</div>
+                    <h4>AI/ML Intern</h4>
+                    <h5>Nexoris Solution</h5>
+                    <p>
+                        Worked on real-world Machine Learning projects involving data preprocessing,
+                        feature engineering, and model training. Implemented supervised learning algorithms
+                        and evaluated model performance using accuracy and validation metrics.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Sep 2025 - Nov 2025</div>
+                    <h4>AI Intern</h4>
+                    <h5>Infosys Springboard (Virtual Internship 6.0) &mdash; Remote, India</h5>
+                    <p>
+                        Completed industry-aligned learning modules focused on software development
+                        and problem-solving. Applied structured development approaches to practical
+                        case studies and strengthened programming fundamentals.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jun 2025 - Jul 2025</div>
+                    <h4>Web Developer Intern</h4>
+                    <h5>Amypo Technologies Pvt Ltd &mdash; On-site, Coimbatore</h5>
+                    <p>
+                        Developed responsive web interfaces using modern frontend technologies.
+                        Improved UI/UX components, optimized webpage performance, and gained
+                        hands-on experience working with real project deadlines.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section">
+        <div class="container">
+            <h2 class="section-title center reveal-up">
+                My <span class="gradient-text">Education</span>
+            </h2>
+            <p class="section-subtitle center reveal-up">
+                My academic journey and qualifications.
+            </p>
+
+            <div class="education-grid">
+                <div class="education-card reveal-up">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-info">
+                        <div class="education-date">2023 - Present</div>
+                        <h4>B.E. Computer Science and Engineering (AI & ML)</h4>
+                        <h5>Sri Ramakrishna Engineering College (SREC), Coimbatore</h5>
+                        <p>
+                            Specialization in Artificial Intelligence & Machine Learning. Focused on AI, ML,
+                            Data Structures, Algorithms, DBMS, and Full-Stack Development. Actively
+                            building real-world projects and strengthening problem-solving skills.
+                        </p>
+                        <div class="education-tags">
+                            <span class="edu-tag">AI/ML</span>
+                            <span class="edu-tag">Data Structures</span>
+                            <span class="edu-tag">Algorithms</span>
+                            <span class="edu-tag">DBMS</span>
+                            <span class="edu-tag">Full-Stack</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card reveal-up">
+                    <div class="education-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="education-info">
+                        <div class="education-date">2021 - 2023</div>
+                        <h4>Higher Secondary Education (+2, Science Stream)</h4>
+                        <h5>Liverpool International College, Kathmandu</h5>
+                        <p>
+                            Studied Physics, Chemistry, and Mathematics, developing strong
+                            analytical thinking and technical foundations for engineering.
+                        </p>
+                        <div class="education-tags">
+                            <span class="edu-tag">Physics</span>
+                            <span class="edu-tag">Chemistry</span>
+                            <span class="edu-tag">Mathematics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card reveal-up">
+                    <div class="education-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="education-info">
+                        <div class="education-date">2017 - 2021</div>
+                        <h4>Secondary Education (Grade 8 &ndash; Grade 10)</h4>
+                        <h5>United Academy, Kailali</h5>
+                        <p>
+                            Maintained strong academic performance and participated
+                            in extracurricular and leadership activities.
+                        </p>
+                        <div class="education-tags">
+                            <span class="edu-tag">Science</span>
+                            <span class="edu-tag">Mathematics</span>
+                            <span class="edu-tag">Leadership</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-card reveal-up">
+                    <div class="education-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="education-info">
+                        <div class="education-date">2010 - 2017</div>
+                        <h4>Primary Education (Grade 1 &ndash; Grade 7)</h4>
+                        <h5>Trinity English Boarding School, Tikapur, Kailali</h5>
+                        <p>
+                            Built foundational academic skills and developed
+                            early interest in science and technology.
+                        </p>
+                        <div class="education-tags">
+                            <span class="edu-tag">Science</span>
+                            <span class="edu-tag">English</span>
+                            <span class="edu-tag">Mathematics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Surya. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-bubble" id="chatbotBubble">
+            <span class="chatbot-badge">1</span>
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        <div class="chatbot-tooltip" id="chatbotTooltip">
+            Hello! I am Surya's Bot, Are you looking for some help?
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar"><i class="fas fa-robot"></i></div>
+                    <div>
+                        <h4>Surya's Bot</h4>
+                        <span class="chatbot-status"><span class="status-dot"></span> Online</span>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbotClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chat-message bot">
+                    <div class="message-bubble">Hello! 👋 I'm Surya's assistant. How can I help you today?</div>
+                </div>
+                <div class="chat-message bot">
+                    <div class="message-bubble">You can ask me about Surya's skills, projects, or how to get in touch!
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatInput" placeholder="Type a message..." />
+                <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/particles.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surya | Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <!-- GSAP for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo"><span id="preloader-typed"></span><span class="preloader-cursor">|</span></div>
+            <div class="preloader-bar">
+                <div class="preloader-bar-fill"></div>
+            </div>
+            <p class="preloader-text">Loading...</p>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Appearance Toggle (Light/Dark) -->
+    <button class="appearance-toggle" id="appearanceToggle" title="Toggle Light/Dark Mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Page Wrapper (grayscale applies here) -->
+    <div class="page-wrapper" id="pageWrapper">
+
+        <!-- Cursor Trail Canvas -->
+        <canvas id="cursorTrail"></canvas>
+
+        <!-- Cursor Glow Effect -->
+        <div class="cursor-glow" id="cursorGlow"></div>
+        <div class="cursor-dot" id="cursorDot"></div>
+
+        <!-- Particles Background -->
+        <canvas id="particlesCanvas"></canvas>
+
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    Surya
+                </a>
+                <div class="nav-menu" id="navMenu">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about-preview" class="nav-link">About</a>
+                    <a href="#projects-preview" class="nav-link">Projects</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#blog" class="nav-link">Blog</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Section Navigation Dots -->
+        <div class="section-nav-dots" id="sectionNavDots">
+            <a href="#home" class="dot-link active" data-section="home">
+                <span class="dot-tooltip">Home</span>
+            </a>
+            <a href="#about-preview" class="dot-link" data-section="about-preview">
+                <span class="dot-tooltip">About</span>
+            </a>
+            <a href="#projects-preview" class="dot-link" data-section="projects-preview">
+                <span class="dot-tooltip">Projects</span>
+            </a>
+            <a href="#testimonials" class="dot-link" data-section="testimonials">
+                <span class="dot-tooltip">Testimonials</span>
+            </a>
+            <a href="#blog" class="dot-link" data-section="blog">
+                <span class="dot-tooltip">Blog</span>
+            </a>
+            <a href="#contact" class="dot-link" data-section="contact">
+                <span class="dot-tooltip">Contact</span>
+            </a>
+        </div>
+
+        <!-- Full Page Scroll Wrapper -->
+        <div class="fullpage-wrapper" id="fullpageWrapper">
+
+            <!-- Hero Section -->
+            <section class="hero fullpage-section" id="home" data-bg="home">
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <div class="hero-greeting animate-slide-up">
+                            <span class="greeting-line"></span>
+                            <h3>SURYA BAHADUR SHAHI</h3>
+                        </div>
+                        <h1 class="hero-title animate-slide-up delay-1">
+                            I'm a <span class="gradient-text typewriter" id="typewriter">Full Stack Developer</span>
+                        </h1>
+                        <p class="hero-description animate-slide-up delay-2">
+                            Hi! I'm Surya, a junior developer with a strong interest in Artificial Intelligence and
+                            Machine
+                            Learning. I enjoy building practical applications, exploring intelligent systems, and
+                            continuously
+                            improving my technical skills through hands-on projects and real-world problem solving
+                        </p>
+                        <div class="hero-buttons animate-slide-up delay-3">
+                            <a href="surya shahi resume.pdf" download class="btn btn-primary">
+                                <i class="fas fa-download"></i> Download CV
+                            </a>
+                            <a href="#contact" class="btn btn-outline">
+                                Contact Me <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="hero-stats animate-slide-up delay-4">
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="10">0</span>+
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="2">0</span>+
+                                <span class="stat-label">Years Exp</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="5">0</span>+
+                                <span class="stat-label">Technologies</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-image animate-fade-in delay-2">
+                        <div class="image-wrapper">
+                            <div class="image-border"></div>
+                            <img src="photo2.jpeg" alt="Surya Bahadur Shahi" />
+                        </div>
+                        <div class="floating-card card-1">
+                            <i class="fab fa-react"></i> React
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fab fa-node-js"></i> Node.js
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fab fa-python"></i> Python
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <span>Scroll Down</span>
+                </div>
+            </section>
+
+            <!-- About Preview Section -->
+            <section class="section about-preview fullpage-section" id="about-preview" data-bg="about">
+                <div class="container">
+                    <div class="section-grid">
+                        <div class="section-content reveal-left">
+                            <h2 class="section-title">
+                                About <span class="gradient-text">Me</span>
+                            </h2>
+                            <p class="section-subtitle">A brief introduction about me and my interests.</p>
+                            <p class="section-text">
+                                I am a passionate junior developer with a strong interest in Artificial Intelligence and
+                                Machine
+                                Learning. I enjoy building intelligent, scalable applications by combining
+                                problem-solving
+                                skills with both front-end and back-end development experience.
+                            </p>
+                            <a href="about.html" class="btn btn-primary">
+                                Learn More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="section-image reveal-right">
+                            <div class="about-image-card">
+                                <div class="code-window">
+                                    <div class="window-dots">
+                                        <span class="dot red"></span>
+                                        <span class="dot yellow"></span>
+                                        <span class="dot green"></span>
+                                    </div>
+                                    <pre class="code-block"><code><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">"Surya"</span>,
+  <span class="code-property">role</span>: <span class="code-string">"Full Stack Dev"</span>,
+  <span class="code-property">skills</span>: [
+    <span class="code-string">"React"</span>,
+    <span class="code-string">"Node.js"</span>,
+    <span class="code-string">"Python"</span>,
+    <span class="code-string">"AI/ML"</span>
+  ],
+  <span class="code-property">passion</span>: <span class="code-string">"Building cool stuff"</span>
+};</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Preview Section -->
+            <section class="section projects-preview fullpage-section" id="projects-preview" data-bg="projects">
+                <div class="container">
+                    <div class="section-grid reverse">
+                        <div class="section-content reveal-right">
+                            <h2 class="section-title">
+                                My <span class="gradient-text">Projects</span>
+                            </h2>
+                            <p class="section-subtitle">Some of my projects that I have built and am currently working
+                                on.</p>
+                            <p class="section-text">
+                                From web applications to AI-powered tools, each project represents my dedication
+                                to writing clean, efficient code and creating meaningful digital experiences.
+                            </p>
+                            <a href="projects.html" class="btn btn-primary">
+                                Learn More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                        <div class="section-image reveal-left">
+                            <div class="projects-grid-preview">
+                                <div class="preview-card">
+                                    <div class="preview-card-icon"><i class="fas fa-globe"></i></div>
+                                    <h4>Web Apps</h4>
+                                </div>
+                                <div class="preview-card">
+                                    <div class="preview-card-icon"><i class="fas fa-robot"></i></div>
+                                    <h4>AI Projects</h4>
+                                </div>
+                                <div class="preview-card">
+                                    <div class="preview-card-icon"><i class="fas fa-mobile-alt"></i></div>
+                                    <h4>Mobile Apps</h4>
+                                </div>
+                                <div class="preview-card">
+                                    <div class="preview-card-icon"><i class="fas fa-database"></i></div>
+                                    <h4>Backend APIs</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="section testimonials fullpage-section" id="testimonials" data-bg="testimonials">
+                <div class="container">
+                    <div class="testimonials-content reveal-up">
+                        <h2 class="section-title center">What People <span class="gradient-text">Say</span></h2>
+                        <p class="section-subtitle center">Kind words from mentors, colleagues, and collaborators I've
+                            had the pleasure of working with.</p>
+                        <div class="testimonials-slider" id="testimonialsSlider">
+                            <!-- Testimonial 1 -->
+                            <div class="testimonial-card active gradient-border">
+                                <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">Surya is an exceptionally talented developer who
+                                    consistently delivers clean, efficient code. His ability to learn new technologies
+                                    quickly and apply them to real-world problems is remarkable. He took ownership of
+                                    complex ML pipelines and delivered ahead of schedule.</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar"
+                                        style="background: linear-gradient(135deg, #6d28d9, #8b5cf6);"><i
+                                            class="fas fa-user-tie"></i></div>
+                                    <div class="testimonial-author-info">
+                                        <h4>Rajeev Kumar</h4>
+                                        <span>AI/ML Supervisor &bull; Nexoris Technologies</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-meta">
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <span class="testimonial-tag">AI / ML</span>
+                                </div>
+                            </div>
+                            <!-- Testimonial 2 -->
+                            <div class="testimonial-card gradient-border">
+                                <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">Working with Surya was a great experience. He brings
+                                    creativity and technical depth to every project. His full-stack skills and passion
+                                    for AI make him an invaluable team member. The dashboard he built increased our
+                                    client's engagement by 40%.</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar"
+                                        style="background: linear-gradient(135deg, #06b6d4, #22d3ee);"><i
+                                            class="fas fa-user-graduate"></i></div>
+                                    <div class="testimonial-author-info">
+                                        <h4>Priya Sharma</h4>
+                                        <span>Team Lead &bull; Amypo Technologies</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-meta">
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="testimonial-tag">Web Dev</span>
+                                </div>
+                            </div>
+                            <!-- Testimonial 3 -->
+                            <div class="testimonial-card gradient-border">
+                                <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">Surya's dedication to learning and building is inspiring. He
+                                    goes above and beyond, always eager to explore new technologies and share his
+                                    knowledge with peers. His final year project on AI-powered diagnostics was among the
+                                    best I've seen.</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar"
+                                        style="background: linear-gradient(135deg, #f59e0b, #fbbf24);"><i
+                                            class="fas fa-chalkboard-teacher"></i></div>
+                                    <div class="testimonial-author-info">
+                                        <h4>Dr. S. Ramesh</h4>
+                                        <span>Professor &bull; SREC, CS Department</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-meta">
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <span class="testimonial-tag">Academic</span>
+                                </div>
+                            </div>
+                            <!-- Testimonial 4 -->
+                            <div class="testimonial-card gradient-border">
+                                <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">An amazing collaborator who understands both the big picture
+                                    and the fine details. Surya debugged a critical authentication issue in our app that
+                                    the rest of us had been stuck on for days — in under an hour. Truly impressive
+                                    problem-solving skills.</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar"
+                                        style="background: linear-gradient(135deg, #ec4899, #f472b6);"><i
+                                            class="fas fa-laptop-code"></i></div>
+                                    <div class="testimonial-author-info">
+                                        <h4>Ankit Verma</h4>
+                                        <span>Fellow Developer &bull; Hackathon Partner</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-meta">
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <span class="testimonial-tag">Teamwork</span>
+                                </div>
+                            </div>
+                            <!-- Testimonial 5 -->
+                            <div class="testimonial-card gradient-border">
+                                <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">Surya's portfolio website alone speaks volumes about his
+                                    design sense and technical capabilities. He helped me revamp my personal brand
+                                    online and taught me modern CSS and animations. A generous soul with world-class
+                                    skills.</p>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar"
+                                        style="background: linear-gradient(135deg, #10b981, #34d399);"><i
+                                            class="fas fa-palette"></i></div>
+                                    <div class="testimonial-author-info">
+                                        <h4>Meera Nair</h4>
+                                        <span>UI/UX Enthusiast &bull; College Peer</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-meta">
+                                    <div class="testimonial-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                            class="fas fa-star"></i>
+                                    </div>
+                                    <span class="testimonial-tag">Design</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-nav">
+                            <button class="testimonial-btn" id="prevTestimonial"><i
+                                    class="fas fa-chevron-left"></i></button>
+                            <div class="testimonial-dots" id="testimonialDots">
+                                <span class="t-dot active"></span>
+                                <span class="t-dot"></span>
+                                <span class="t-dot"></span>
+                                <span class="t-dot"></span>
+                                <span class="t-dot"></span>
+                            </div>
+                            <button class="testimonial-btn" id="nextTestimonial"><i
+                                    class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog/Articles Section -->
+            <section class="section blog fullpage-section" id="blog" data-bg="blog">
+                <div class="container">
+                    <div class="blog-content reveal-up">
+                        <h2 class="section-title center">Latest <span class="gradient-text">Articles</span></h2>
+                        <p class="section-subtitle center">Thoughts, tutorials, and insights on development, AI, and the
+                            ever-evolving tech landscape.</p>
+                        <div class="blog-grid">
+                            <!-- Blog Card 1 -->
+                            <article class="blog-card gradient-border tilt-card">
+                                <div class="blog-card-image"
+                                    style="background: linear-gradient(135deg, #6d28d9 0%, #a855f7 50%, #06b6d4 100%);">
+                                    <div class="blog-card-category">AI / ML</div>
+                                    <i class="fas fa-brain"></i>
+                                    <div class="blog-card-overlay">
+                                        <span class="blog-card-reading"><i class="fas fa-book-open"></i> 5 min
+                                            read</span>
+                                    </div>
+                                </div>
+                                <div class="blog-card-content">
+                                    <div class="blog-card-meta">
+                                        <span><i class="far fa-calendar"></i> Feb 2026</span>
+                                        <span><i class="far fa-eye"></i> 1.2k views</span>
+                                    </div>
+                                    <h3>Getting Started with LangChain and LLMs</h3>
+                                    <p>A beginner-friendly guide to building AI-powered applications using LangChain,
+                                        OpenAI APIs, and vector databases like Pinecone.</p>
+                                    <div class="blog-card-tags">
+                                        <span class="blog-tag">Python</span>
+                                        <span class="blog-tag">LangChain</span>
+                                        <span class="blog-tag">OpenAI</span>
+                                    </div>
+                                    <a href="blog/langchain-llms.html" class="blog-read-more magnetic-btn">Read Article <i
+                                            class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </article>
+                            <!-- Blog Card 2 -->
+                            <article class="blog-card gradient-border tilt-card">
+                                <div class="blog-card-image"
+                                    style="background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 50%, #6d28d9 100%);">
+                                    <div class="blog-card-category">Web Dev</div>
+                                    <i class="fab fa-react"></i>
+                                    <div class="blog-card-overlay">
+                                        <span class="blog-card-reading"><i class="fas fa-book-open"></i> 4 min
+                                            read</span>
+                                    </div>
+                                </div>
+                                <div class="blog-card-content">
+                                    <div class="blog-card-meta">
+                                        <span><i class="far fa-calendar"></i> Jan 2026</span>
+                                        <span><i class="far fa-eye"></i> 890 views</span>
+                                    </div>
+                                    <h3>Building Performant React Apps in 2026</h3>
+                                    <p>Tips and techniques for optimizing React applications — from code splitting and
+                                        lazy loading to server components and beyond.</p>
+                                    <div class="blog-card-tags">
+                                        <span class="blog-tag">React</span>
+                                        <span class="blog-tag">Performance</span>
+                                        <span class="blog-tag">Next.js</span>
+                                    </div>
+                                    <a href="blog/react-performance.html" class="blog-read-more magnetic-btn">Read Article <i
+                                            class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </article>
+                            <!-- Blog Card 3 -->
+                            <article class="blog-card gradient-border tilt-card">
+                                <div class="blog-card-image"
+                                    style="background: linear-gradient(135deg, #f59e0b 0%, #ec4899 50%, #8b5cf6 100%);">
+                                    <div class="blog-card-category">Career</div>
+                                    <i class="fas fa-rocket"></i>
+                                    <div class="blog-card-overlay">
+                                        <span class="blog-card-reading"><i class="fas fa-book-open"></i> 6 min
+                                            read</span>
+                                    </div>
+                                </div>
+                                <div class="blog-card-content">
+                                    <div class="blog-card-meta">
+                                        <span><i class="far fa-calendar"></i> Dec 2025</span>
+                                        <span><i class="far fa-eye"></i> 2.4k views</span>
+                                    </div>
+                                    <h3>My Journey: From Beginner to Full Stack</h3>
+                                    <p>Reflecting on my path from writing my first HTML page to building full-stack AI
+                                        applications — lessons learned and advice for beginners.</p>
+                                    <div class="blog-card-tags">
+                                        <span class="blog-tag">Career</span>
+                                        <span class="blog-tag">Growth</span>
+                                        <span class="blog-tag">Story</span>
+                                    </div>
+                                    <a href="blog/beginner-to-fullstack.html" class="blog-read-more magnetic-btn">Read Article <i
+                                            class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="section contact fullpage-section" id="contact" data-bg="contact">
+                <div class="container">
+                    <div class="contact-content reveal-up">
+                        <div class="contact-header">
+                            <h2 class="contact-title">Let's <span class="talk-badge">Talk</span></h2>
+                            <p class="contact-description">
+                                Feel free to reach out if you have any questions, want to collaborate,
+                                or just want to say hi. I'd love to hear from you!
+                            </p>
+                        </div>
+
+                        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mojngobp"
+                            method="POST">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="text" id="firstName" name="firstName" placeholder="Your first Name"
+                                        required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="lastName" name="lastName" placeholder="Your last Name"
+                                        required />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <input type="email" id="email" name="email" placeholder="E-mail" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" />
+                                </div>
+                            </div>
+                            <div class="form-group full-width">
+                                <textarea id="message" name="message" rows="5" placeholder="Write Your Message"
+                                    required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-submit">
+                                Send Now
+                            </button>
+                        </form>
+
+                        <div class="social-links">
+                            <a href="mailto:suryashahi153@gmail.com" class="social-link" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://github.com/suryashahi" class="social-link" target="_blank"
+                                aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.instagram.com/surya__shahi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                class="social-link" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/surya-bahadur-shahi-61674a259/" class="social-link"
+                                target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div><!-- end fullpage-wrapper -->
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 Surya. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- Chatbot Widget -->
+        <div class="chatbot-widget" id="chatbotWidget">
+            <div class="chatbot-bubble" id="chatbotBubble">
+                <span class="chatbot-badge">1</span>
+                <i class="fas fa-comment-dots"></i>
+            </div>
+            <div class="chatbot-tooltip" id="chatbotTooltip">
+                Hello! I am Surya's Bot, Are you looking for some help?
+            </div>
+            <div class="chatbot-window" id="chatbotWindow">
+                <div class="chatbot-header">
+                    <div class="chatbot-header-info">
+                        <div class="chatbot-avatar"><i class="fas fa-robot"></i></div>
+                        <div>
+                            <h4>Jaadu</h4>
+                            <span class="chatbot-status"><span class="status-dot"></span> Online</span>
+                        </div>
+                    </div>
+                    <button class="chatbot-close" id="chatbotClose"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="chatbot-messages" id="chatbotMessages">
+                    <div class="chat-message bot">
+                        <div class="message-bubble">Hello! 👋 I'm Surya's assistant. How can I help you today?</div>
+                    </div>
+                    <div class="chat-message bot">
+                        <div class="message-bubble">You can ask me about Surya's skills, projects, or how to get in
+                            touch!
+                        </div>
+                    </div>
+                </div>
+                <div class="chatbot-input">
+                    <input type="text" id="chatInput" placeholder="Type a message..." />
+                    <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- end page-wrapper -->
+
+    <script src="js/particles.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>

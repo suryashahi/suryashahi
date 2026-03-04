@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Building Performant React Apps in 2026 | Surya</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+        .blog-article {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 120px 40px 80px;
+            position: relative;
+            z-index: 1;
+        }
+        .blog-article-header { margin-bottom: 48px; }
+        .blog-article-category {
+            display: inline-block;
+            padding: 5px 16px;
+            border-radius: 20px;
+            background: rgba(6, 182, 212, 0.15);
+            color: #22d3ee;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+        .blog-article-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #06b6d4, #22d3ee, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .blog-article-meta {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        .blog-article-meta span { display: flex; align-items: center; gap: 6px; }
+        .blog-article-author { display: flex; align-items: center; gap: 12px; }
+        .blog-article-author-avatar {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: linear-gradient(135deg, #06b6d4, #22d3ee);
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 1rem;
+        }
+        .blog-article-author-name { font-weight: 600; color: var(--text-primary); }
+        .blog-article-cover {
+            width: 100%; height: 400px; border-radius: 20px;
+            background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 50%, #6d28d9 100%);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 48px; overflow: hidden;
+        }
+        .blog-article-cover i { font-size: 6rem; color: rgba(255, 255, 255, 0.2); }
+        .blog-article-body { font-size: 1.08rem; line-height: 1.9; color: var(--text-secondary); }
+        .blog-article-body h2 { font-size: 1.6rem; font-weight: 700; color: var(--text-primary); margin: 40px 0 16px; }
+        .blog-article-body h3 { font-size: 1.25rem; font-weight: 600; color: var(--text-primary); margin: 32px 0 12px; }
+        .blog-article-body p { margin-bottom: 20px; }
+        .blog-article-body code {
+            background: var(--bg-card); padding: 3px 8px; border-radius: 6px;
+            font-family: var(--font-code); font-size: 0.92rem;
+            color: var(--accent-tertiary); border: 1px solid var(--border-color);
+        }
+        .blog-article-body pre {
+            background: var(--bg-card); border: 1px solid var(--border-color);
+            border-radius: 12px; padding: 24px; margin: 24px 0;
+            overflow-x: auto; font-family: var(--font-code);
+            font-size: 0.88rem; line-height: 1.7; color: var(--accent-tertiary);
+        }
+        .blog-article-body ul, .blog-article-body ol { margin: 16px 0 20px 24px; }
+        .blog-article-body li { margin-bottom: 8px; }
+        .blog-article-body blockquote {
+            border-left: 3px solid #06b6d4; padding: 16px 24px;
+            margin: 24px 0; background: rgba(6, 182, 212, 0.06);
+            border-radius: 0 12px 12px 0; font-style: italic;
+        }
+        .blog-article-tags {
+            display: flex; flex-wrap: wrap; gap: 8px;
+            margin-top: 48px; padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+        }
+        .blog-article-tags span {
+            padding: 5px 14px; border-radius: 20px;
+            background: rgba(6, 182, 212, 0.1); color: #22d3ee;
+            font-size: 0.78rem; font-weight: 500;
+            border: 1px solid rgba(6, 182, 212, 0.15);
+        }
+        .blog-back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--accent-secondary); font-size: 0.9rem;
+            font-weight: 500; margin-bottom: 32px; transition: all 0.3s ease;
+        }
+        .blog-back-link:hover { gap: 12px; color: var(--accent-tertiary); }
+        @media (max-width: 768px) {
+            .blog-article { padding: 100px 20px 60px; }
+            .blog-article-title { font-size: 1.8rem; }
+            .blog-article-cover { height: 240px; }
+            .blog-article-body { font-size: 1rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">Surya</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="../index.html#home" class="nav-link">Home</a>
+                <a href="../index.html#about-preview" class="nav-link">About</a>
+                <a href="../index.html#projects-preview" class="nav-link">Projects</a>
+                <a href="../index.html#testimonials" class="nav-link">Testimonials</a>
+                <a href="../index.html#blog" class="nav-link active">Blog</a>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <article class="blog-article">
+        <a href="../index.html#blog" class="blog-back-link"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+
+        <div class="blog-article-header">
+            <div class="blog-article-category">Web Dev</div>
+            <h1 class="blog-article-title">Building Performant React Apps in 2026</h1>
+            <div class="blog-article-meta">
+                <div class="blog-article-author">
+                    <div class="blog-article-author-avatar"><i class="fas fa-user"></i></div>
+                    <div>
+                        <div class="blog-article-author-name">Surya Shahi</div>
+                    </div>
+                </div>
+                <span><i class="far fa-calendar"></i> Jan 22, 2026</span>
+                <span><i class="far fa-clock"></i> 4 min read</span>
+                <span><i class="far fa-eye"></i> 890 views</span>
+            </div>
+        </div>
+
+        <div class="blog-article-cover">
+            <i class="fab fa-react"></i>
+        </div>
+
+        <div class="blog-article-body">
+            <p>React has come a long way since its early days. In 2026, building a performant React application means going far beyond <code>useState</code> and <code>useEffect</code>. It means leveraging modern patterns, server-side capabilities, and smart architecture decisions from day one.</p>
+
+            <h2>1. Embrace React Server Components</h2>
+            <p>React Server Components (RSC) are no longer experimental — they're the default in frameworks like Next.js 15. Server Components render on the server and send zero JavaScript to the client.</p>
+            <blockquote>If a component doesn't need interactivity, it shouldn't ship JavaScript. RSC makes this the default.</blockquote>
+            <pre>// This component runs on the server only — no JS shipped to client
+async function BlogList() {
+  const posts = await db.posts.findMany();
+  return (
+    &lt;ul&gt;
+      {posts.map(post =&gt; (
+        &lt;li key={post.id}&gt;{post.title}&lt;/li&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}</pre>
+
+            <h2>2. Code Splitting Done Right</h2>
+            <p>Stop importing everything at the top level. Use <code>React.lazy()</code> and dynamic imports aggressively:</p>
+            <pre>const Dashboard = React.lazy(() =&gt; import('./Dashboard'));
+const Settings = React.lazy(() =&gt; import('./Settings'));
+
+function App() {
+  return (
+    &lt;Suspense fallback={&lt;LoadingSkeleton /&gt;}&gt;
+      &lt;Routes&gt;
+        &lt;Route path="/dashboard" element={&lt;Dashboard /&gt;} /&gt;
+        &lt;Route path="/settings" element={&lt;Settings /&gt;} /&gt;
+      &lt;/Routes&gt;
+    &lt;/Suspense&gt;
+  );
+}</pre>
+
+            <h2>3. Optimize Re-renders</h2>
+            <p>Unnecessary re-renders are the #1 performance killer in React apps. Here's the toolkit:</p>
+            <ul>
+                <li><code>React.memo()</code> — Skip re-render if props haven't changed</li>
+                <li><code>useMemo()</code> — Memoize expensive computations</li>
+                <li><code>useCallback()</code> — Stabilize function references</li>
+                <li><strong>State colocation</strong> — Keep state as close to where it's used as possible</li>
+                <li><strong>Zustand / Jotai</strong> — Atomic state management to avoid unnecessary context re-renders</li>
+            </ul>
+
+            <h3>Pro Tip: Use React DevTools Profiler</h3>
+            <p>The React DevTools Profiler shows exactly which components re-render and why. Use it religiously. If you see a component re-rendering on every keystroke when it shouldn't, that's your signal.</p>
+
+            <h2>4. Image and Asset Optimization</h2>
+            <p>Large images destroy performance. Use the Next.js <code>&lt;Image /&gt;</code> component or implement:</p>
+            <ul>
+                <li>Lazy loading with <code>loading="lazy"</code></li>
+                <li>Modern formats: WebP and AVIF</li>
+                <li>Responsive <code>srcset</code> for different screen sizes</li>
+                <li>Blur-up placeholder patterns</li>
+            </ul>
+
+            <h2>5. Bundle Analysis and Tree Shaking</h2>
+            <p>Run <code>npx next build --analyze</code> or use <code>webpack-bundle-analyzer</code> regularly. Common culprits:</p>
+            <ul>
+                <li>Importing entire libraries: <code>import _ from 'lodash'</code> ships 70KB. Use <code>import debounce from 'lodash/debounce'</code></li>
+                <li>Moment.js — Switch to <code>date-fns</code> or <code>dayjs</code></li>
+                <li>Icon libraries — Import individual icons, not the entire package</li>
+            </ul>
+
+            <h2>6. Streaming and Suspense</h2>
+            <p>React 18+ supports streaming HTML from the server. Combined with Suspense boundaries, this means users see content progressively — no more blank white screens while the JS bundle loads.</p>
+            <pre>// Next.js App Router — streaming by default
+export default function Layout({ children }) {
+  return (
+    &lt;html&gt;
+      &lt;body&gt;
+        &lt;Suspense fallback={&lt;NavSkeleton /&gt;}&gt;
+          &lt;Nav /&gt;
+        &lt;/Suspense&gt;
+        {children}
+      &lt;/body&gt;
+    &lt;/html&gt;
+  );
+}</pre>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li>Default to Server Components — ship less JS</li>
+                <li>Code split aggressively with lazy loading</li>
+                <li>Profile and eliminate unnecessary re-renders</li>
+                <li>Optimize images and audit your bundle</li>
+                <li>Use streaming + Suspense for progressive loading</li>
+                <li>Measure with Lighthouse and Web Vitals constantly</li>
+            </ul>
+
+            <p>Performance isn't a one-time task — it's a mindset. Build it into your workflow from day one and your users will thank you.</p>
+
+            <div class="blog-article-tags">
+                <span>React</span>
+                <span>Performance</span>
+                <span>Next.js</span>
+                <span>Server Components</span>
+                <span>Code Splitting</span>
+                <span>Web Vitals</span>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <p>&copy; 2026 Surya Shahi. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
