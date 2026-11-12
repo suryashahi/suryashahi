@@ -275,4 +275,161 @@ document.addEventListener('DOMContentLoaded', () => {
         item.style.transition = 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
         timelineObserver.observe(item);
     });
+
+    // ===== Resume Viewer Modal (PDF.js) =====
+    const resumeModal = document.getElementById('resumeModal');
+    const resumeModalClose = document.getElementById('resumeModalClose');
+    const viewResumeBtn = document.getElementById('viewResumeBtn');
+    const pdfCanvas = document.getElementById('pdfCanvas');
+    const pdfLoading = document.getElementById('pdfLoading');
+    const pdfError = document.getElementById('pdfError');
+    const prevPageBtn = document.getElementById('prevPage');
+    const nextPageBtn = document.getElementById('nextPage');
+    const zoomOutBtn = document.getElementById('zoomOut');
+    const zoomInBtn = document.getElementById('zoomIn');
+    const pageInfo = document.getElementById('pageInfo');
+    const zoomLevel = document.getElementById('zoomLevel');
+
+    let pdfDoc = null;
+    let currentPage = 1;
+    let currentScale = 1.0;
+    let isLoading = false;
+
+    // Load PDF.js from CDN
+    function loadPDFJS() {
+        return new Promise((resolve, reject) => {
+            if (window.pdfjsLib) {
+                resolve();
+                return;
+            }
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs';
+            script.type = 'module';
+            script.onload = () => {
+                // pdfjsLib is available as global
+                window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
+                resolve();
+            };
+            script.onerror = () => reject(new Error('Failed to load PDF.js'));
+            document.head.appendChild(script);
+        });
+    }
+
+    async function openResumeModal() {
+        if (isLoading) return;
+        if (!resumeModal) return;
+
+        resumeModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        pdfLoading.style.display = 'flex';
+        pdfError.style.display = 'none';
+        pdfCanvas.style.display = 'none';
+
+        try {
+            await loadPDFJS();
+            const pdfUrl = 'surya-shahi-resume-20260529.pdf';
+            pdfDoc = await window.pdfjsLib.getDocument(pdfUrl).promise;
+            currentPage = 1;
+            currentScale = 1.0;
+            await renderPage(currentPage);
+        } catch (err) {
+            console.error('PDF load error:', err);
+            pdfLoading.style.display = 'none';
+            pdfError.style.display = 'block';
+        }
+    }
+
+    async function renderPage(pageNum) {
+        if (!pdfDoc || pageNum < 1 || pageNum > pdfDoc.numPages) return;
+
+        isLoading = true;
+        pdfLoading.style.display = 'flex';
+        pdfCanvas.style.display = 'none';
+
+        try {
+            const page = await pdfDoc.getPage(pageNum);
+            const viewport = page.getViewport({ scale: currentScale });
+
+            const canvas = pdfCanvas;
+            const context = canvas.getContext('2d');
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            canvas.style.width = '100%';
+            canvas.style.height = 'auto';
+
+            const renderContext = {
+                canvasContext: context,
+                viewport: viewport
+            };
+
+            await page.render(renderContext).promise;
+
+            currentPage = pageNum;
+            updateToolbar();
+            pdfLoading.style.display = 'none';
+            pdfCanvas.style.display = 'block';
+        } catch (err) {
+            console.error('Page render error:', err);
+            pdfLoading.style.display = 'none';
+            pdfError.style.display = 'block';
+        } finally {
+            isLoading = false;
+        }
+    }
+
+    function updateToolbar() {
+        if (!pdfDoc) return;
+        pageInfo.textContent = `Page ${currentPage} of ${pdfDoc.numPages}`;
+        zoomLevel.textContent = `${Math.round(currentScale * 100)}%`;
+        prevPageBtn.disabled = currentPage <= 1;
+        nextPageBtn.disabled = currentPage >= pdfDoc.numPages;
+        zoomOutBtn.disabled = currentScale <= 0.5;
+        zoomInBtn.disabled = currentScale >= 3.0;
+    }
+
+    function closeResumeModal() {
+        if (!resumeModal) return;
+        resumeModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Event listeners
+    if (viewResumeBtn) {
+        viewResumeBtn.addEventListener('click', openResumeModal);
+    }
+    if (resumeModalClose) {
+        resumeModalClose.addEventListener('click', closeResumeModal);
+    }
+    if (resumeModal) {
+        // Close on overlay click
+        resumeModal.addEventListener('click', (e) => {
+            if (e.target.classList.contains('resume-modal-overlay')) {
+                closeResumeModal();
+            }
+        });
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
+                closeResumeModal();
+            }
+        });
+    }
+    if (prevPageBtn) {
+        prevPageBtn.addEventListener('click', () => renderPage(currentPage - 1));
+    }
+    if (nextPageBtn) {
+        nextPageBtn.addEventListener('click', () => renderPage(currentPage + 1));
+    }
+    if (zoomOutBtn) {
+        zoomOutBtn.addEventListener('click', () => {
+            currentScale = Math.max(0.5, currentScale - 0.25);
+            renderPage(currentPage);
+        });
+    }
+    if (zoomInBtn) {
+        zoomInBtn.addEventListener('click', () => {
+            currentScale = Math.min(3.0, currentScale + 0.25);
+            renderPage(currentPage);
+        });
+    }
 });

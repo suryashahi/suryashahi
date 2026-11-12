@@ -35,6 +35,9 @@
     <meta name="twitter:description" content="Full Stack Developer specializing in React, Node.js, TypeScript, Python, AI/ML. Open to work." />
     <meta name="twitter:image" content="https://suryashahi.com.np/photo2.webp" />
 
+    <!-- Analytics (Umami - Privacy-Friendly) -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR_UMAMI_WEBSITE_ID"></script>
+
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -136,6 +139,9 @@
                     <a href="surya-shahi-resume-20260529.pdf" download class="btn btn-primary">
                         <i class="fas fa-download"></i> Download CV
                     </a>
+                    <button class="btn btn-outline" id="viewResumeBtn">
+                        <i class="fas fa-eye"></i> View Resume
+                    </button>
                     <a href="#contact" class="btn btn-outline">
                         Contact Me <i class="fas fa-arrow-right"></i>
                     </a>
@@ -333,6 +339,59 @@
             <p>&copy; 2026 Surya. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Resume Viewer Modal (PDF.js) -->
+    <div class="resume-modal" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle">
+        <div class="resume-modal-overlay"></div>
+        <div class="resume-modal-content">
+            <div class="resume-modal-header">
+                <h3 id="resumeModalTitle">Surya Bahadur Shahi — Resume</h3>
+                <button class="resume-modal-close" id="resumeModalClose" aria-label="Close resume viewer">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="resume-modal-body">
+                <div class="resume-toolbar">
+                    <div class="toolbar-group">
+                        <button id="prevPage" class="toolbar-btn" aria-label="Previous page" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button id="nextPage" class="toolbar-btn" aria-label="Next page" disabled>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <div class="toolbar-group">
+                        <span id="pageInfo">Page 1 of 1</span>
+                    </div>
+                    <div class="toolbar-group">
+                        <button id="zoomOut" class="toolbar-btn" aria-label="Zoom out">
+                            <i class="fas fa-search-minus"></i>
+                        </button>
+                        <span id="zoomLevel">100%</span>
+                        <button id="zoomIn" class="toolbar-btn" aria-label="Zoom in">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                    <div class="toolbar-group">
+                        <a href="surya-shahi-resume-20260529.pdf" download class="btn btn-primary btn-sm">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                <div class="resume-canvas-container">
+                    <canvas id="pdfCanvas"></canvas>
+                </div>
+                <div class="resume-loading" id="pdfLoading">
+                    <div class="spinner"></div>
+                    <span>Loading resume...</span>
+                </div>
+                <div class="resume-error" id="pdfError" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>Failed to load PDF. <a href="surya-shahi-resume-20260529.pdf" download>Download instead</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Chatbot Widget -->
     <div class="chatbot-widget" id="chatbotWidget">

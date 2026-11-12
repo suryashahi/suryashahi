@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Surya Bahadur Shahi — Tech, AI & Development</title>
+    <meta name="description" content="Technical blog by Surya Bahadur Shahi — Full Stack Developer & AI/ML Engineer. Articles on React, Node.js, Python, Machine Learning, TensorFlow, RAG, LLMs, and software engineering.">
+    <meta name="keywords" content="Blog, Tech Blog, React, Node.js, Python, AI, Machine Learning, TensorFlow, RAG, LLM, Full Stack Developer, Surya Bahadur Shahi">
+    <meta name="author" content="Surya Bahadur Shahi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://suryashahi.com.np/blog.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="photo2.webp" />
+    <link rel="apple-touch-icon" href="photo2.webp" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://suryashahi.com.np/blog.html" />
+    <meta property="og:title" content="Blog | Surya Bahadur Shahi — Tech, AI & Development" />
+    <meta property="og:description" content="Technical articles on Full Stack Development, AI/ML, React, Node.js, Python, and software engineering." />
+    <meta property="og:image" content="https://suryashahi.com.np/photo2.webp" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog | Surya Bahadur Shahi" />
+    <meta name="twitter:description" content="Tech articles on Full Stack Development, AI/ML, and software engineering." />
+    <meta name="twitter:image" content="https://suryashahi.com.np/photo2.webp" />
+
+    <!-- Analytics (Umami - Privacy-Friendly) -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="YOUR_UMAMI_WEBSITE_ID"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- Particles Background -->
+    <canvas id="particlesCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                Surya
+            </a>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <button class="appearance-toggle" id="appearanceToggle" title="Toggle Appearance">
+                <i class="fas fa-palette"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="animate-slide-up">Blog</h1>
+            <p class="animate-slide-up delay-1">Thoughts on Full Stack Development, AI/ML, and Software Engineering</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-grid">
+
+                <!-- Blog Post 1 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="blog-placeholder-1.webp" alt="Building RAG Systems with LangChain" loading="lazy" />
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <time class="blog-card-date" datetime="2025-11-15">Nov 15, 2025</time>
+                            <span class="blog-card-category">AI/ML</span>
+                        </div>
+                        <h2 class="blog-card-title">Building Production-Ready RAG Systems with LangChain</h2>
+                        <p class="blog-card-excerpt">
+                            A deep dive into building Retrieval-Augmented Generation systems that work in production —
+                            covering document chunking strategies, embedding models, vector databases, and evaluation techniques.
+                        </p>
+                        <a href="blog/rag-langchain-production.html" class="blog-card-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="blog-placeholder-2.webp" alt="Full-Stack TypeScript with React and Node.js" loading="lazy" />
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <time class="blog-card-date" datetime="2025-10-28">Oct 28, 2025</time>
+                            <span class="blog-card-category">Full Stack</span>
+                        </div>
+                        <h2 class="blog-card-title">End-to-End Type Safety: React, Node.js, and Shared Types</h2>
+                        <p class="blog-card-excerpt">
+                            How to share TypeScript types between frontend and backend using monorepos, tRPC, or OpenAPI
+                            generation — eliminating API contract bugs before they reach production.
+                        </p>
+                        <a href="blog/fullstack-typescript-types.html" class="blog-card-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="blog-placeholder-3.webp" alt="Computer Vision for Plant Disease Detection" loading="lazy" />
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <time class="blog-card-date" datetime="2025-09-20">Sep 20, 2025</time>
+                            <span class="blog-card-category">Computer Vision</span>
+                        </div>
+                        <h2 class="blog-card-title">Deploying TensorFlow Models to Production: Lessons from Plant Disease Detection</h2>
+                        <p class="blog-card-excerpt">
+                            Real-world challenges and solutions when taking a CNN model from Jupyter notebook to a
+                            scalable web service — model optimization, ONNX conversion, and edge deployment.
+                        </p>
+                        <a href="blog/tensorflow-production-deployment.html" class="blog-card-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="blog-placeholder-4.webp" alt="Real-time Features with Socket.IO" loading="lazy" />
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <time class="blog-card-date" datetime="2025-08-12">Aug 12, 2025</time>
+                            <span class="blog-card-category">Backend</span>
+                        </div>
+                        <h2 class="blog-card-title">Building Real-Time Features with Socket.IO and Redis</h2>
+                        <p class="blog-card-excerpt">
+                            Implementing live order tracking, notifications, and collaborative features —
+                            scaling WebSocket connections with Redis adapter and handling reconnection logic.
+                        </p>
+                        <a href="blog/socketio-realtime-features.html" class="blog-card-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="blog-placeholder-5.webp" alt="AI-Powered Personal Styling with Virtual Try-On" loading="lazy" />
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <time class="blog-card-date" datetime="2025-07-05">Jul 5, 2025</time>
+                            <span class="blog-card-category">AI/ML</span>
+                        </div>
+                        <h2 class="blog-card-title">Virtual Try-On with FASHN VTON: Integrating Generative AI in Fashion</h2>
+                        <p class="blog-card-excerpt">
+                            Behind the scenes of StyleAI — using diffusion models for photorealistic virtual try-on,
+                            handling pose estimation, and optimizing inference for web deployment.
+                        </p>
+                        <a href="blog/virtual-tryon-fashn-vton.html" class="blog-card-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="blog-placeholder-6.webp" alt="Café Management System Architecture" loading="lazy" />
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <time class="blog-card-date" datetime="2025-06-18">Jun 18, 2025</time>
+                            <span class="blog-card-category">Architecture</span>
+                        </div>
+                        <h2 class="blog-card-title">System Design: BrewQ — A Real-Time Café Management Platform</h2>
+                        <p class="blog-card-excerpt">
+                            Architecture decisions for a full-stack café platform with QR ordering, real-time dashboards,
+                            and microservices communication — from database schema to deployment strategy.
+                        </p>
+                        <a href="blog/brewq-system-design.html" class="blog-card-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Blog CTA -->
+            <div class="blog-cta">
+                <div class="blog-cta-content">
+                    <h2 class="blog-cta-title">Want More Content?</h2>
+                    <p class="blog-cta-description">
+                        I write about Full Stack Development, AI/ML, and software engineering challenges.
+                        Subscribe to get new posts delivered to your inbox.
+                    </p>
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Get Updates
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Surya. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-bubble" id="chatbotBubble">
+            <span class="chatbot-badge">1</span>
+            <i class="fas fa-comment-dots"></i>
+        </div>
+        <div class="chatbot-tooltip" id="chatbotTooltip">
+            Hello! I am Surya's Bot, Are you looking for some help?
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar"><i class="fas fa-robot"></i></div>
+                    <div>
+                        <h4>Surya's Bot</h4>
+                        <span class="chatbot-status"><span class="status-dot"></span> Online</span>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbotClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chat-message bot">
+                    <div class="message-bubble">Hello! 👋 I'm Surya's assistant. How can I help you today?</div>
+                </div>
+                <div class="chat-message bot">
+                    <div class="message-bubble">You can ask me about Surya's skills, projects, experience, or how to get in touch!</div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatInput" placeholder="Type a message..." />
+                <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/particles.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+
+</html>
