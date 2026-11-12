@@ -1228,6 +1228,54 @@ body:hover .cursor-dot {
     transform: translate(0);
 }
 
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    .animate-slide-up,
+    .animate-fade-in {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .delay-1, .delay-2, .delay-3, .delay-4 {
+        animation-delay: 0s !important;
+    }
+
+    .reveal-left,
+    .reveal-right,
+    .reveal-up {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .floating-card {
+        animation: none !important;
+    }
+
+    .image-border {
+        animation: none !important;
+    }
+
+    .scroll-indicator {
+        animation: none !important;
+    }
+
+    .wheel {
+        animation: none !important;
+    }
+
+    .cursor-glow,
+    .cursor-dot {
+        display: none !important;
+    }
+
+    /* Disable particle animation in JS handles this, but hide canvas as fallback */
+    #particlesCanvas {
+        display: none !important;
+    }
+}
+
 /* ===== About Page ===== */
 .page-hero {
     min-height: 50vh;
@@ -2041,4 +2089,12 @@ body:hover .cursor-dot {
 @keyframes typingBounce {
     0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
     40% { transform: scale(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .typing-dot {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }

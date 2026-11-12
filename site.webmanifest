@@ -1,0 +1,23 @@
+{
+  "name": "Surya Bahadur Shahi | Portfolio",
+  "short_name": "Surya Portfolio",
+  "description": "Full Stack Developer & AI/ML Engineer — BrewQ, StyleAI, Plant Disease Detection, InsightEngine",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "photo2.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "photo2.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

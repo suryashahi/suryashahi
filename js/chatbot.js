@@ -28,12 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
         tools: ["Git", "Docker", "AWS", "Linux", "Figma", "VS Code"],
         ai: ["TensorFlow", "PyTorch", "LangChain", "OpenAI API", "Hugging Face"],
         projects: [
-            { name: "E-Commerce Platform", tech: "React, Node.js, MongoDB", desc: "Full-featured e-commerce app with authentication, product management, cart, and payments." },
-            { name: "AI Chatbot Assistant", tech: "Python, LangChain, OpenAI", desc: "Intelligent chatbot powered by LLMs for Q&A, document summarization, and coding help." },
-            { name: "Project Management Tool", tech: "Next.js, TypeScript, PostgreSQL", desc: "Collaborative project management with real-time updates, task boards, and team features." },
-            { name: "Weather Dashboard", tech: "React, API, Tailwind", desc: "Beautiful weather app with real-time data, 7-day forecast, and interactive maps." },
-            { name: "Developer Blog", tech: "Next.js, MDX, Vercel", desc: "Personal blog for writing about web development, AI, and tech tutorials." },
-            { name: "Video Chat App", tech: "WebRTC, Socket.io, Node.js", desc: "Real-time video conferencing with peer-to-peer connections and screen sharing." }
+            { name: "BrewQ – Smart Café Ordering & Management", tech: "React, TypeScript, Node.js, Express.js, MongoDB, Socket.IO", desc: "Full-stack café platform with online ordering, QR access, real-time tracking, barista dashboard, revenue analytics. Deployed on Vercel & Render." },
+            { name: "StyleAI – AI-Powered Personal Stylist", tech: "React.js, TypeScript, Tailwind CSS, Node.js, Express.js, PostgreSQL/Supabase, Computer Vision, LLM API, FASHN VTON v1.5", desc: "AI personal styling with digital wardrobe, outfit recommendations, clothing recognition, conversational AI stylist, virtual try-on (FASHN VTON), shopping recommendations, capsule wardrobe optimization." },
+            { name: "Plant Disease Detection & Severity Estimation", tech: "Python, TensorFlow/Keras, OpenCV, CNN, Image Processing", desc: "AI-based plant disease detection from leaf images with severity estimation via image segmentation. Supports early crop disease identification for farmers." },
+            { name: "InsightEngine – AI Research Assistant (RAG)", tech: "React, Tailwind CSS, Python, FastAPI, RAG, LLMs, Tesseract OCR, Supabase, Vector Embeddings", desc: "AI research assistant with document upload, semantic search, RAG-powered Q&A. Multi-format ingestion with OCR fallback, chunking, embeddings, vector retrieval, multi-LLM integration." }
         ],
         timeline: [
             { period: "Nov - Dec 2025", role: "AI/ML Intern", place: "Nexoris Solution" },
@@ -114,28 +112,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         },
         {
-            triggers: ["ecommerce", "e-commerce", "shopping", "online store"],
-            handler: () => `The <strong>E-Commerce Platform</strong> is built with React, Node.js, and MongoDB. It features user authentication, product management, a shopping cart, and payment integration — a full online shopping experience! 🛒`
+            triggers: ["brewq", "brew q", "coffee", "cafe", "café", "restaurant ordering", "food ordering"],
+            handler: () => `The <strong>BrewQ – Smart Café Ordering & Management</strong> is built with React, TypeScript, Node.js, Express.js, MongoDB, and Socket.IO. Full-stack café platform with online ordering, QR-based table access, real-time order tracking, interactive barista dashboard, revenue analytics. Deployed on Vercel (frontend) and Render (backend)! ☕🚀`
         },
         {
-            triggers: ["chatbot project", "ai chatbot", "llm project"],
-            handler: () => `The <strong>AI Chatbot Assistant</strong> uses Python, LangChain, and OpenAI. It's an intelligent chatbot that can answer questions, summarize documents, and assist with coding — powered by LLMs! 🤖`
+            triggers: ["styleai", "style ai", "stylist", "fashion", "outfit", "wardrobe", "virtual try-on", "vton", "fashn"],
+            handler: () => `The <strong>StyleAI – AI-Powered Personal Stylist</strong> uses React.js, TypeScript, Tailwind, Node.js, Express.js, PostgreSQL/Supabase, Computer Vision, LLM APIs, and FASHN VTON v1.5. Features: digital wardrobe organization, AI outfit recommendations (occasion/weather/preferences), clothing recognition, conversational AI stylist, photorealistic virtual try-on, shopping recommendations, capsule wardrobe optimization! 👗✨`
         },
         {
-            triggers: ["project management", "task board", "kanban", "management tool"],
-            handler: () => `The <strong>Project Management Tool</strong> is built with Next.js, TypeScript, and PostgreSQL. It features real-time updates, task boards, team management, and progress tracking! 📋`
+            triggers: ["plant disease", "plant", "disease detection", "crop", "farming", "agriculture", "leaf", "severity"],
+            handler: () => `The <strong>Plant Disease Detection & Severity Estimation</strong> uses Python, TensorFlow/Keras, OpenCV, and CNN. Analyzes leaf images to classify plant diseases and estimates infection severity via image segmentation of affected regions. Helps farmers with early disease identification for better crop management! 🌱🔬`
         },
         {
-            triggers: ["weather", "forecast"],
-            handler: () => `The <strong>Weather Dashboard</strong> uses React, external APIs, and Tailwind CSS. It shows real-time weather, 7-day forecasts, interactive maps, and location-based alerts! 🌦️`
-        },
-        {
-            triggers: ["blog", "writing", "articles", "tutorials"],
-            handler: () => `The <strong>Developer Blog</strong> is built with Next.js and MDX on Vercel. Surya writes about web development, AI, and tech tutorials. ✍️`
-        },
-        {
-            triggers: ["video chat", "video call", "webrtc", "conferencing", "video app"],
-            handler: () => `The <strong>Video Chat App</strong> uses WebRTC, Socket.io, and Node.js — real-time video conferencing with peer-to-peer connections, screen sharing, and text chat! 📹`
+            triggers: ["insightengine", "insight engine", "rag", "research assistant", "document search", "semantic search", "ocr", "tesseract", "vector search"],
+            handler: () => `The <strong>InsightEngine – AI Research Assistant</strong> uses React, Tailwind, Python, FastAPI, RAG, LLMs, Tesseract OCR, Supabase, and vector embeddings. Upload documents, perform semantic search, get context-aware answers. Multi-format ingestion with OCR fallback, automated chunking/embedding, vector retrieval, multi-LLM support, ingestion diagnostics! 📚🤖`
         },
         {
             triggers: ["experience", "work history", "timeline", "career", "job", "internship", "background"],

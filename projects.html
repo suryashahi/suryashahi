@@ -3,7 +3,30 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects | Surya</title>
+    <title>Projects | Surya Bahadur Shahi — Full Stack & AI/ML Portfolio</title>
+    <meta name="description" content="Explore Surya Bahadur Shahi's projects: BrewQ (café management platform), StyleAI (AI personal stylist with virtual try-on), Plant Disease Detection (CNN + TensorFlow), InsightEngine (RAG research assistant). Full-stack, AI/ML, computer vision projects with live demos and source code.">
+    <meta name="keywords" content="Projects, Portfolio, BrewQ, StyleAI, Plant Disease Detection, InsightEngine, React, Node.js, Python, TensorFlow, RAG, AI, Machine Learning, Full Stack">
+    <meta name="author" content="Surya Bahadur Shahi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://suryashahi.com.np/projects.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="photo2.jpeg" />
+    <link rel="apple-touch-icon" href="photo2.jpeg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://suryashahi.com.np/projects.html" />
+    <meta property="og:title" content="Projects | Surya Bahadur Shahi — Full Stack & AI/ML Portfolio" />
+    <meta property="og:description" content="BrewQ, StyleAI, Plant Disease Detection, InsightEngine — live demos & GitHub repos. Full-stack, AI/ML, computer vision projects." />
+    <meta property="og:image" content="https://suryashahi.com.np/photo2.jpeg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Projects | Surya Bahadur Shahi" />
+    <meta name="twitter:description" content="4 production projects: café platform, AI stylist, plant disease detection, RAG assistant. Live demos + source code." />
+    <meta name="twitter:image" content="https://suryashahi.com.np/photo2.jpeg" />
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
@@ -52,162 +75,134 @@
         <div class="container">
             <div class="projects-grid">
 
-                <!-- Project 1 -->
+                <!-- Project 1: BrewQ -->
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-coffee"></i>
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
                             <span class="project-tag">React</span>
+                            <span class="project-tag">TypeScript</span>
                             <span class="project-tag">Node.js</span>
+                            <span class="project-tag">Express.js</span>
                             <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">Socket.IO</span>
                         </div>
-                        <h3>E-Commerce Platform</h3>
+                        <h3>BrewQ – Smart Café Ordering & Management</h3>
                         <p>
-                            A full-featured e-commerce application with user authentication,
-                            product management, shopping cart, and payment integration.
+                            Full-stack café management platform with online ordering, QR-based access,
+                            real-time order tracking, interactive barista dashboard, and revenue analytics.
+                            REST APIs + real-time communication via Socket.IO, deployed on Vercel & Render.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link">
+                            <a href="https://github.com/suryashahi/COFFEE" class="project-link" target="_blank" rel="noopener">
                                 <i class="fab fa-github"></i> Code
                             </a>
-                            <a href="#" class="project-link">
+                            <a href="https://drinkcoffee.vercel.app/" class="project-link" target="_blank" rel="noopener">
                                 <i class="fas fa-external-link-alt"></i> Live
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
+                <!-- Project 2: StyleAI -->
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="project-tag">React.js</span>
+                            <span class="project-tag">TypeScript</span>
+                            <span class="project-tag">Tailwind CSS</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">Express.js</span>
+                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">Supabase</span>
+                            <span class="project-tag">Computer Vision</span>
+                            <span class="project-tag">LLM API</span>
+                            <span class="project-tag">FASHN VTON</span>
+                        </div>
+                        <h3>StyleAI – AI-Powered Personal Stylist</h3>
+                        <p>
+                            AI-powered personal styling platform with digital wardrobe organization,
+                            personalized outfit recommendations (occasion, weather, preferences),
+                            AI clothing recognition, conversational AI stylist, virtual try-on using
+                            FASHN VTON v1.5, shopping recommendations, and capsule wardrobe optimization.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/suryashahi/styleAI" class="project-link" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                            <a href="https://personaldesigner.vercel.app/" class="project-link" target="_blank" rel="noopener">
+                                <i class="fas fa-external-link-alt"></i> Live
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Plant Disease Detection -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-leaf"></i>
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
-                            <span class="project-tag">LangChain</span>
-                            <span class="project-tag">OpenAI</span>
+                            <span class="project-tag">TensorFlow</span>
+                            <span class="project-tag">Keras</span>
+                            <span class="project-tag">OpenCV</span>
+                            <span class="project-tag">CNN</span>
+                            <span class="project-tag">Image Processing</span>
                         </div>
-                        <h3>AI Chatbot Assistant</h3>
+                        <h3>Plant Disease Detection & Severity Estimation</h3>
                         <p>
-                            An intelligent chatbot powered by LLMs that can answer questions,
-                            summarize documents, and assist with coding tasks.
+                            AI-based plant disease detection system using deep learning and computer vision.
+                            Classifies diseases from leaf images and estimates infection severity via
+                            image segmentation of affected regions. Supports early identification for
+                            informed crop management decisions.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link">
+                            <a href="https://github.com/suryashahi/PLANT" class="project-link" target="_blank" rel="noopener">
                                 <i class="fab fa-github"></i> Code
                             </a>
-                            <a href="#" class="project-link">
+                            <a href="https://smartplantdisease.vercel.app/" class="project-link" target="_blank" rel="noopener">
                                 <i class="fas fa-external-link-alt"></i> Live
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
+                <!-- Project 4: InsightEngine -->
                 <div class="project-card">
                     <div class="project-image">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="project-tag">Next.js</span>
-                            <span class="project-tag">TypeScript</span>
-                            <span class="project-tag">PostgreSQL</span>
-                        </div>
-                        <h3>Project Management Tool</h3>
-                        <p>
-                            A collaborative project management app with real-time updates,
-                            task boards, team management, and progress tracking.
-                        </p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-cloud-sun"></i>
+                        <i class="fas fa-search"></i>
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
                             <span class="project-tag">React</span>
-                            <span class="project-tag">API</span>
-                            <span class="project-tag">Tailwind</span>
+                            <span class="project-tag">Tailwind CSS</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">RAG</span>
+                            <span class="project-tag">LLMs</span>
+                            <span class="project-tag">Tesseract OCR</span>
+                            <span class="project-tag">Supabase</span>
+                            <span class="project-tag">Vector Embeddings</span>
                         </div>
-                        <h3>Weather Dashboard</h3>
+                        <h3>InsightEngine – AI Research Assistant</h3>
                         <p>
-                            A beautiful weather application with real-time data, 7-day forecast,
-                            interactive maps, and location-based weather alerts.
+                            AI-powered research assistant with RAG pipeline for document upload,
+                            semantic search, and context-aware answers. Multi-format ingestion with
+                            OCR fallback (Tesseract), automated chunking, embedding generation,
+                            vector retrieval, multi-LLM integration, and ingestion diagnostics.
                         </p>
                         <div class="project-links">
-                            <a href="#" class="project-link">
+                            <a href="https://github.com/suryashahi/insightengine" class="project-link" target="_blank" rel="noopener">
                                 <i class="fab fa-github"></i> Code
                             </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-blog"></i>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="project-tag">Next.js</span>
-                            <span class="project-tag">MDX</span>
-                            <span class="project-tag">Vercel</span>
-                        </div>
-                        <h3>Developer Blog</h3>
-                        <p>
-                            A personal blog built with Next.js and MDX for writing about
-                            web development, AI, and tech tutorials.
-                        </p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <span class="project-tag">WebRTC</span>
-                            <span class="project-tag">Socket.io</span>
-                            <span class="project-tag">Node.js</span>
-                        </div>
-                        <h3>Video Chat App</h3>
-                        <p>
-                            A real-time video conferencing application with peer-to-peer
-                            connections, screen sharing, and chat functionality.
-                        </p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                            <a href="#" class="project-link">
+                            <a href="https://insightenginee.vercel.app/" class="project-link" target="_blank" rel="noopener">
                                 <i class="fas fa-external-link-alt"></i> Live
                             </a>
                         </div>
