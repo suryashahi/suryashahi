@@ -1,0 +1,94 @@
+name: Blog Post Template
+description: Scaffold a new blog post with frontmatter and structure
+title: "blog: [Title]"
+labels: ["blog", "content"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Post Title
+      description: The title of your blog post
+      placeholder: "Building Production-Ready RAG Systems with LangChain"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Select the primary category
+      options:
+        - AI/ML
+        - Full Stack
+        - Backend
+        - Computer Vision
+        - Generative AI
+    validations:
+      required: true
+  - type: input
+    id: readTime
+    attributes:
+      label: Read Time
+      description: Estimated reading time
+      placeholder: "12 min read"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description (SEO/Social)
+      description: One-sentence summary for cards, RSS, social previews
+      placeholder: "A deep dive into building Retrieval-Augmented Generation systems that work in production..."
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: Tags (comma-separated)
+      description: 3-6 relevant tags
+      placeholder: "RAG, LangChain, Vector Databases, Production AI, Python"
+    validations:
+      required: true
+  - type: dropdown
+    id: heroImage
+    attributes:
+      label: Hero Image
+      description: Select existing placeholder or add new image to repo root
+      options:
+        - blog-placeholder-1.webp
+        - blog-placeholder-2.webp
+        - blog-placeholder-3.webp
+        - blog-placeholder-4.webp
+        - blog-placeholder-5.webp
+        - blog-placeholder-6.webp
+        - Custom (add to repo root first)
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: Post Content (Markdown)
+      description: Write your blog post content here
+      placeholder: |
+        ## Introduction
+
+        Your intro here...
+
+        ## Section 1
+
+        Content with **bold**, *italic*, `code`.
+
+        ### Code Example
+
+        ```javascript
+        const hello = "world";
+        ```
+
+        ## Conclusion
+
+        Wrap up...
+
+        ---
+
+        *Next up: Tease the next post!*
+    validations:
+      required: true
