@@ -226,6 +226,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.opacity = '1';
     });
 
+    // Restore opacity on bfcache restore (browser back/forward)
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+            document.body.style.opacity = '1';
+            document.body.style.transition = 'none';
+        }
+    });
+
     // ===== Stagger animation for project cards =====
     const projectCards = document.querySelectorAll('.project-card');
     const cardObserver = new IntersectionObserver((entries) => {
