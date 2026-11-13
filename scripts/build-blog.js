@@ -319,11 +319,33 @@ function generateRss(posts) {
     console.log('  ✅ rss.xml generated');
 }
 
+// Clean up old HTML files that no longer have corresponding .md files
+function cleanOldHtmlFiles(validSlugs) {
+    console.log('🧹 Cleaning old HTML files...');
+    const files = fs.readdirSync(OUTPUT_DIR).filter(f => f.endsWith('.html'));
+    let cleaned = 0;
+    for (const file of files) {
+        const slug = file.replace('.html', '');
+        // Keep template.html and any non-post HTML files
+        if (file === 'template.html') continue;
+        if (!validSlugs.has(slug)) {
+            fs.unlinkSync(path.join(OUTPUT_DIR, file));
+            console.log(`  🗑️ Removed ${file}`);
+            cleaned++;
+        }
+    }
+    if (cleaned === 0) console.log('  ✅ No orphaned files');
+}
+
 // Main
 console.log('🚀 Building blog...\n');
 
 const posts = parsePosts();
 console.log(`\n📚 Found ${posts.length} posts\n`);
+
+// Clean orphaned HTML files
+const validSlugs = new Set(posts.map(p => p.slug));
+cleanOldHtmlFiles(validSlugs);
 
 generatePostHtml(posts);
 updateBlogIndex(posts);
