@@ -60,8 +60,12 @@ const blogIndexSource = fs.readFileSync(BLOG_INDEX_PATH, 'utf-8');
 
 // Parse all markdown posts
 function parsePosts() {
-    const files = fs.readdirSync(POSTS_DIR).filter(f => f.endsWith('.md'));
+    const files = fs.readdirSync(POSTS_DIR)
+        .filter(f => f.endsWith('.md'))
+        .filter(f => f !== 'TEMPLATE.md'); // Exclude template file
+
     const posts = [];
+    const seenSlugs = new Set();
 
     for (const file of files) {
         const filePath = path.join(POSTS_DIR, file);
@@ -78,6 +82,15 @@ function parsePosts() {
         }
 
         const slug = slugify(data.title, { lower: true, strict: true });
+
+        // Check for duplicate slugs
+        if (seenSlugs.has(slug)) {
+            console.error(`❌ Duplicate slug "${slug}" from title "${data.title}" in ${file}`);
+            console.error('   Each post must have a unique title. Please change the title.');
+            process.exit(1);
+        }
+        seenSlugs.add(slug);
+
         const date = new Date(data.date);
         const dateISO = date.toISOString();
         const dateFormatted = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
