@@ -73,7 +73,7 @@ function parsePosts() {
         const { data, content: markdown } = matter(content);
 
         // Validate required frontmatter
-        const required = ['title', 'date', 'category', 'readTime', 'description', 'tags', 'heroImage'];
+        const required = ['title', 'date', 'category', 'readTime', 'description', 'tags'];
         for (const field of required) {
             if (!data[field]) {
                 console.error(`❌ Missing required frontmatter field "${field}" in ${file}`);
@@ -141,9 +141,6 @@ function generateBlogIndexCards(posts) {
         cardsHtml += `
                 <!-- Blog Post: ${post.title} -->
                 <article class="blog-card">
-                    <div class="blog-card-image">
-                        <img src="${post.heroImage}" alt="${post.title}" loading="lazy" />
-                    </div>
                     <div class="blog-card-content">
                         <div class="blog-card-meta">
                             <time class="blog-card-date" datetime="${post.dateISO}">${post.dateFormatted}</time>

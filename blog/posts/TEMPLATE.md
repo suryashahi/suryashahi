@@ -5,7 +5,6 @@ category: "AI/ML"          # AI/ML | Full Stack | Backend | Computer Vision | Ge
 readTime: "10 min read"
 description: "One-sentence summary for SEO, cards, RSS, social previews."
 tags: ["Tag1", "Tag2", "Tag3"]
-heroImage: "blog-placeholder-1.webp"  # Use 1-6, or add new image to repo root
 ---
 
 # TEMPLATE - Your Post Title Here

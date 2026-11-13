@@ -48,21 +48,6 @@ body:
       placeholder: "RAG, LangChain, Vector Databases, Production AI, Python"
     validations:
       required: true
-  - type: dropdown
-    id: heroImage
-    attributes:
-      label: Hero Image
-      description: Select existing placeholder or add new image to repo root
-      options:
-        - blog-placeholder-1.webp
-        - blog-placeholder-2.webp
-        - blog-placeholder-3.webp
-        - blog-placeholder-4.webp
-        - blog-placeholder-5.webp
-        - blog-placeholder-6.webp
-        - Custom (add to repo root first)
-    validations:
-      required: true
   - type: textarea
     id: content
     attributes:
