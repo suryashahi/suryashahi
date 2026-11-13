@@ -2776,6 +2776,54 @@ body:hover .cursor-dot {
     line-height: 1.7;
 }
 
+/* Blog CTA Form (Buttondown) */
+.blog-cta-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.blog-cta-form-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.blog-cta-form-group input {
+    flex: 1;
+    padding: 16px 20px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: var(--transition-normal);
+}
+
+.blog-cta-form-group input::placeholder {
+    color: var(--text-muted);
+}
+
+.blog-cta-form-group input:focus {
+    border-color: var(--accent-secondary);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.blog-cta-form-group button {
+    white-space: nowrap;
+}
+
+.buttondown-hidden-iframe {
+    display: none;
+}
+
+.blog-cta-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
 @media (max-width: 768px) {
     .blog-post-title {
         font-size: 2rem;
@@ -2791,6 +2839,15 @@ body:hover .cursor-dot {
 
     .blog-post-hero {
         padding: 120px 0 40px;
+    }
+
+    .blog-cta-form-group {
+        flex-direction: column;
+    }
+
+    .blog-cta-form-group button {
+        width: 100%;
+        justify-content: center;
     }
 
     .resume-modal-content {

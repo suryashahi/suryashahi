@@ -171,11 +171,19 @@
                     <h2 class="blog-cta-title">Want More Content?</h2>
                     <p class="blog-cta-description">
                         I write about Full Stack Development, AI/ML, and software engineering challenges.
-                        Subscribe via RSS to get new posts automatically.
+                        Subscribe to get new posts delivered to your inbox.
                     </p>
-                    <a href="rss.xml" class="btn btn-primary" target="_blank" rel="noopener">
-                        <i class="fas fa-rss"></i> Subscribe via RSS
-                    </a>
+                    <!-- Buttondown Email Form -->
+                    <form class="blog-cta-form" action="https://buttondown.email/api/emails/embed-form/YOUR_USERNAME" method="post" target="buttondown-form-target">
+                        <div class="blog-cta-form-group">
+                            <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Subscribe
+                            </button>
+                        </div>
+                        <iframe name="buttondown-form-target" class="buttondown-hidden-iframe" aria-hidden="true"></iframe>
+                        <p class="blog-cta-note">No spam. Unsubscribe anytime.</p>
+                    </form>
                 </div>
             </div>
         </div>
