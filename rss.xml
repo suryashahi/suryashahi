@@ -5,7 +5,7 @@
         <link>https://suryashahi.com.np/blog.html</link>
         <description>Technical articles on Full Stack Development, AI/ML, and Software Engineering</description>
         <language>en</language>
-        <lastBuildDate>Fri, 13 Nov 2026 17:35:46 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 13 Nov 2026 18:02:58 GMT</lastBuildDate>
         <atom:link href="https://suryashahi.com.np/rss.xml" rel="self" type="application/rss+xml" />
         <managingEditor>suryashahi153@gmail.com (Surya Bahadur Shahi)</managingEditor>
         <webMaster>suryashahi153@gmail.com (Surya Bahadur Shahi)</webMaster>
@@ -22,6 +22,19 @@
             <category>Dairy Farming</category>
         </item>
         <item>
+            <title><![CDATA[The Beautiful Danphe: Nepal's National Bird and Natural Treasure]]></title>
+            <link>https://suryashahi.com.np/blog/the-beautiful-danphe-nepals-national-bird-and-natural-treasure.html</link>
+            <guid isPermaLink="true">https://suryashahi.com.np/blog/the-beautiful-danphe-nepals-national-bird-and-natural-treasure.html</guid>
+            <description><![CDATA[Discover the Himalayan Monal, known as Danphe, Nepal's national bird, including its appearance, habitat, food habits, cultural importance, and conservation.]]></description>
+            <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+            <author>suryashahi153@gmail.com (Surya Bahadur Shahi)</author>
+            <category>Danphe</category>
+            <category>Himalayan Monal</category>
+            <category>Nepal</category>
+            <category>Wildlife</category>
+            <category>Birds</category>
+        </item>
+        <item>
             <title><![CDATA[The Wonderful World of Hens: Importance, Characteristics, and Benefits]]></title>
             <link>https://suryashahi.com.np/blog/the-wonderful-world-of-hens-importance-characteristics-and-benefits.html</link>
             <guid isPermaLink="true">https://suryashahi.com.np/blog/the-wonderful-world-of-hens-importance-characteristics-and-benefits.html</guid>
@@ -32,20 +45,6 @@
             <category>Animals</category>
             <category>Poultry Farming</category>
             <category>Agriculture</category>
-        </item>
-        <item>
-            <title><![CDATA[Discover Nepal: A Journey Through the Land of Mountains and Culture]]></title>
-            <link>https://suryashahi.com.np/blog/discover-nepal-a-journey-through-the-land-of-mountains-and-culture.html</link>
-            <guid isPermaLink="true">https://suryashahi.com.np/blog/discover-nepal-a-journey-through-the-land-of-mountains-and-culture.html</guid>
-            <description><![CDATA[Explore Nepal's breathtaking Himalayas, rich cultural heritage, adventure destinations, wildlife, and unique travel experiences.]]></description>
-            <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
-            <author>suryashahi153@gmail.com (Surya Bahadur Shahi)</author>
-            <category>Nepal</category>
-            <category>Tourism</category>
-            <category>Travel</category>
-            <category>Himalayas</category>
-            <category>Adventure</category>
-            <category>Culture</category>
         </item>
         <item>
             <title><![CDATA[Building Production-Ready RAG Systems with LangChain]]></title>
