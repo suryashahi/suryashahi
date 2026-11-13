@@ -5,10 +5,37 @@
         <link>https://suryashahi.com.np/blog.html</link>
         <description>Technical articles on Full Stack Development, AI/ML, and Software Engineering</description>
         <language>en</language>
-        <lastBuildDate>Fri, 13 Nov 2026 09:36:26 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 13 Nov 2026 10:56:00 GMT</lastBuildDate>
         <atom:link href="https://suryashahi.com.np/rss.xml" rel="self" type="application/rss+xml" />
         <managingEditor>suryashahi153@gmail.com (Surya Bahadur Shahi)</managingEditor>
         <webMaster>suryashahi153@gmail.com (Surya Bahadur Shahi)</webMaster>
+        <item>
+            <title><![CDATA[Nepal: A Land of Natural Beauty, Culture, and Endless Possibilities]]></title>
+            <link>https://suryashahi.com.np/blog/nepal-a-land-of-natural-beauty-culture-and-endless-possibilities.html</link>
+            <guid isPermaLink="true">https://suryashahi.com.np/blog/nepal-a-land-of-natural-beauty-culture-and-endless-possibilities.html</guid>
+            <description><![CDATA[Discover Nepal's breathtaking Himalayan landscapes, rich cultural heritage, ancient traditions, delicious cuisine, and growing opportunities in technology and tourism.]]></description>
+            <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+            <author>suryashahi153@gmail.com (Surya Bahadur Shahi)</author>
+            <category>Nepal</category>
+            <category>Culture</category>
+            <category>Tourism</category>
+            <category>Himalayas</category>
+            <category>Travel</category>
+        </item>
+        <item>
+            <title><![CDATA[Nepal's Modern Future: Technology, Innovation, and Emerging Opportunities]]></title>
+            <link>https://suryashahi.com.np/blog/nepals-modern-future-technology-innovation-and-emerging-opportunities.html</link>
+            <guid isPermaLink="true">https://suryashahi.com.np/blog/nepals-modern-future-technology-innovation-and-emerging-opportunities.html</guid>
+            <description><![CDATA[Explore Nepal's growing technology sector, digital innovation, startup ecosystem, and opportunities in software development and AI.]]></description>
+            <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+            <author>suryashahi153@gmail.com (Surya Bahadur Shahi)</author>
+            <category>Nepal</category>
+            <category>Technology</category>
+            <category>Innovation</category>
+            <category>Startups</category>
+            <category>AI</category>
+            <category>Digital Economy</category>
+        </item>
         <item>
             <title><![CDATA[Building Production-Ready RAG Systems with LangChain]]></title>
             <link>https://suryashahi.com.np/blog/building-production-ready-rag-systems-with-langchain.html</link>
