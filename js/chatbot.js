@@ -239,12 +239,25 @@ document.addEventListener('DOMContentLoaded', () => {
             ])
         },
         {
+            triggers: ["blog", "article", "post", "write", "writing", "articles", "posts"],
+            handler: () => `Surya writes technical articles on Full Stack Development, AI/ML, and software engineering!<br><br>
+        📝 <strong>Latest posts:</strong><br>
+        • <a href="blog/rag-langchain-production.html">Building Production-Ready RAG Systems with LangChain</a><br>
+        • <a href="blog/fullstack-typescript-types.html">End-to-End Type Safety: React, Node.js, and Shared Types</a><br>
+        • <a href="blog/tensorflow-production-deployment.html">Deploying TensorFlow Models to Production</a><br>
+        • <a href="blog/socketio-realtime-features.html">Building Real-Time Features with Socket.IO and Redis</a><br>
+        • <a href="blog/virtual-tryon-fashn-vton.html">Virtual Try-On with FASHN VTON</a><br>
+        • <a href="blog/brewq-system-design.html">System Design: BrewQ — A Real-Time Café Management Platform</a><br><br>
+        Read them all at <a href="blog.html">the Blog page</a>! 📖`
+        },
+        {
             triggers: ["what can i ask", "help", "what do you know", "options", "menu"],
             handler: () =>
                 `Here's everything I can help with:<br><br>` +
                 `👤 <strong>"Who is Surya?"</strong> — learn about him<br>` +
                 `🛠️ <strong>"What are his skills?"</strong> — tech stack<br>` +
                 `💼 <strong>"Show me projects"</strong> — portfolio<br>` +
+                `📝 <strong>"Blog"</strong> — technical articles<br>` +
                 `📋 <strong>"Experience"</strong> — career timeline<br>` +
                 `📧 <strong>"Contact"</strong> — how to reach him<br>` +
                 `🏆 <strong>"Strengths"</strong> — what he's best at<br>` +
