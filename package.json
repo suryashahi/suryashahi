@@ -1,0 +1,21 @@
+{
+  "name": "surya-portfolio",
+  "version": "1.0.0",
+  "description": "Surya Bahadur Shahi — Full Stack Developer & AI/ML Engineer Portfolio",
+  "private": true,
+  "scripts": {
+    "build:blog": "node scripts/build-blog.js",
+    "new:blog": "node scripts/new-blog.js",
+    "dev": "npx serve . -p 3000",
+    "preview": "npm run build:blog && npm run dev"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "handlebars": "^4.7.8",
+    "marked": "^12.0.0",
+    "slugify": "^1.6.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

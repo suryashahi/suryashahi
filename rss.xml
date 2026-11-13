@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Surya Bahadur Shahi — Tech Blog</title>
+        <link>https://suryashahi.com.np/blog.html</link>
+        <description>Technical articles on Full Stack Development, AI/ML, and Software Engineering</description>
+        <language>en</language>
+        <lastBuildDate>Fri, 13 Nov 2026 09:36:26 GMT</lastBuildDate>
+        <atom:link href="https://suryashahi.com.np/rss.xml" rel="self" type="application/rss+xml" />
+        <managingEditor>suryashahi153@gmail.com (Surya Bahadur Shahi)</managingEditor>
+        <webMaster>suryashahi153@gmail.com (Surya Bahadur Shahi)</webMaster>
+        <item>
+            <title><![CDATA[Building Production-Ready RAG Systems with LangChain]]></title>
+            <link>https://suryashahi.com.np/blog/building-production-ready-rag-systems-with-langchain.html</link>
+            <guid isPermaLink="true">https://suryashahi.com.np/blog/building-production-ready-rag-systems-with-langchain.html</guid>
+            <description><![CDATA[A deep dive into building Retrieval-Augmented Generation systems that work in production — covering document chunking strategies, embedding models, vector databases, and evaluation techniques.]]></description>
+            <pubDate>Sat, 15 Nov 2025 00:00:00 GMT</pubDate>
+            <author>suryashahi153@gmail.com (Surya Bahadur Shahi)</author>
+            <category>RAG</category>
+            <category>LangChain</category>
+            <category>Vector Databases</category>
+            <category>Production AI</category>
+            <category>Python</category>
+        </item>
+        <item>
+            <title><![CDATA[Virtual Try-On with FASHN VTON: Diffusion Models for Fashion E-Commerce]]></title>
+            <link>https://suryashahi.com.np/blog/virtual-try-on-with-fashn-vton-diffusion-models-for-fashion-e-commerce.html</link>
+            <guid isPermaLink="true">https://suryashahi.com.np/blog/virtual-try-on-with-fashn-vton-diffusion-models-for-fashion-e-commerce.html</guid>
+            <description><![CDATA[Building photorealistic virtual try-on for StyleAI — integrating FASHN's VTON diffusion model, handling pose preservation, garment warping, and optimizing inference for production.]]></description>
+            <pubDate>Wed, 05 Nov 2025 00:00:00 GMT</pubDate>
+            <author>suryashahi153@gmail.com (Surya Bahadur Shahi)</author>
+            <category>Generative AI</category>
+            <category>Diffusion Models</category>
+            <category>Computer Vision</category>
+            <category>Fashion Tech</category>
+            <category>Virtual Try-On</category>
+            <category>Production ML</category>
+        </item>
+        <item>
+            <title><![CDATA[End-to-End Type Safety: React, Node.js, and Shared Types]]></title>
+            <link>https://suryashahi.com.np/blog/end-to-end-type-safety-react-nodejs-and-shared-types.html</link>
+            <guid isPermaLink="true">https://suryashahi.com.np/blog/end-to-end-type-safety-react-nodejs-and-shared-types.html</guid>
+            <description><![CDATA[How to share TypeScript types between frontend and backend using monorepos, tRPC, or OpenAPI generation — eliminating API contract bugs before they reach production.]]></description>
+            <pubDate>Tue, 28 Oct 2025 00:00:00 GMT</pubDate>
+            <author>suryashahi153@gmail.com (Surya Bahadur Shahi)</author>
+            <category>TypeScript</category>
+            <category>React</category>
+            <category>Node.js</category>
+            <category>Full Stack</category>
+            <category>tRPC</category>
+            <category>Monorepo</category>
+        </item>
+        <item>
+            <title><![CDATA[Deploying TensorFlow Models to Production: Lessons from Plant Disease Detection]]></title>
+            <link>https://suryashahi.com.np/blog/deploying-tensorflow-models-to-production-lessons-from-plant-disease-detection.html</link>
+            <guid isPermaLink="true">https://suryashahi.com.np/blog/deploying-tensorflow-models-to-production-lessons-from-plant-disease-detection.html</guid>
+            <description><![CDATA[Real-world challenges and solutions when taking a CNN model from Jupyter notebook to a scalable web service — model optimization, ONNX conversion, and edge deployment.]]></description>
+            <pubDate>Sat, 20 Sep 2025 00:00:00 GMT</pubDate>
+            <author>suryashahi153@gmail.com (Surya Bahadur Shahi)</author>
+            <category>TensorFlow</category>
+            <category>Computer Vision</category>
+            <category>ONNX</category>
+            <category>Production</category>
+            <category>Edge Deployment</category>
+            <category>Model Optimization</category>
+        </item>
+        <item>
+            <title><![CDATA[Building Real-Time Features with Socket.IO and Redis]]></title>
+            <link>https://suryashahi.com.np/blog/building-real-time-features-with-socketio-and-redis.html</link>
+            <guid isPermaLink="true">https://suryashahi.com.np/blog/building-real-time-features-with-socketio-and-redis.html</guid>
+            <description><![CDATA[Implementing live order tracking, notifications, and collaborative features — scaling WebSocket connections with Redis adapter and handling reconnection logic.]]></description>
+            <pubDate>Tue, 12 Aug 2025 00:00:00 GMT</pubDate>
+            <author>suryashahi153@gmail.com (Surya Bahadur Shahi)</author>
+            <category>Socket.IO</category>
+            <category>Redis</category>
+            <category>WebSocket</category>
+            <category>Real-time</category>
+            <category>Node.js</category>
+            <category>Scaling</category>
+        </item>
+    </channel>
+</rss>
